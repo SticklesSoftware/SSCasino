@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_APIDemos" xml:space="preserve">
+    <value>This page uses the Google YouTube Restful API to get you the top 10 poker videos in some of the very best categories. Enjoy!</value>
+  </data>
+  <data name="About_CardShuffler" xml:space="preserve">
+    <value>This page shuffles a deck pf playing cards using either the {0} or {1} shuffling algorithms.  Shuffle up to 10,000 times a nd choose from multiple card packs.</value>
+  </data>
+  <data name="About_PokerRoom" xml:space="preserve">
+    <value>This page deals a full round of poker (nine hands) along with the board cards (flop, turn and river) and highlights the winning hand.  Hand histories are collected and analyzed against typical results.</value>
+  </data>
+  <data name="About_Randomness" xml:space="preserve">
+    <value>This page conmpares the {0} and {1} shuffling algorithms. Shuffle up to 1 million times with either a four or six card sample and see the results displayed graphically.</value>
+  </data>
+  <data name="Err_CreatingEmail" xml:space="preserve">
+    <value>An error occurred attempting to create an email message.</value>
+  </data>
+  <data name="Err_Internal" xml:space="preserve">
+    <value>An internal server error has occurred, please contact the portal administrator.</value>
+  </data>
+  <data name="Err_Source" xml:space="preserve">
+    <value>Poker Playground</value>
+  </data>
+  <data name="Err_Unhandled" xml:space="preserve">
+    <value>An exception occurred. However, a critical error occurred while recording the exception information. no exception information was gathered. Unfortunately, there is no more information at this time.</value>
+  </data>
+  <data name="InfoPanel_AboutBackendTech" xml:space="preserve">
+    <value>Amazon EC2 Server, MS SQL Server, C#, Razor Pages, YouTube RESTFul API</value>
+  </data>
+  <data name="InfoPanel_AboutDevEnv" xml:space="preserve">
+    <value>Microsoft Visual Studio, DevExpress Component Suite, GIT Hub, Hosted via Amazon Web Services</value>
+  </data>
+  <data name="InfoPanel_AboutFrontendTech" xml:space="preserve">
+    <value>HTML, CSS, Javascript, JScript</value>
+  </data>
+  <data name="InfoPanel_AboutHeader" xml:space="preserve">
+    <value>About This Page</value>
+  </data>
+  <data name="InfoPanel_HeaderBackendTech" xml:space="preserve">
+    <value>Backend: </value>
+  </data>
+  <data name="InfoPanel_HeaderDevEnv" xml:space="preserve">
+    <value>Development: </value>
+  </data>
+  <data name="InfoPanel_HeaderFrontendTech" xml:space="preserve">
+    <value>Frontend: </value>
+  </data>
+  <data name="InfoPanel_TechHeader" xml:space="preserve">
+    <value>Technologies Used:</value>
+  </data>
+  <data name="PokerBeats_Caption" xml:space="preserve">
+    <value>WORST BEATS</value>
+  </data>
+  <data name="PokerBeats_Key" xml:space="preserve">
+    <value>PokerBeatsVids</value>
+  </data>
+  <data name="PokerBeats_Phrase" xml:space="preserve">
+    <value>Poker's Worst Beats</value>
+  </data>
+  <data name="PokerBluffs_Caption" xml:space="preserve">
+    <value>GREATEST BLUFFS</value>
+  </data>
+  <data name="PokerBluffs_Key" xml:space="preserve">
+    <value>PokerBluffsVids</value>
+  </data>
+  <data name="PokerBluffs_Phrase" xml:space="preserve">
+    <value>Poker's Greatest Bluffs</value>
+  </data>
+  <data name="PokerCategoryTitle" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="PokerFights_Caption" xml:space="preserve">
+    <value>CRAZIEST FIGHTS</value>
+  </data>
+  <data name="PokerFights_Key" xml:space="preserve">
+    <value>PokerFightsVids</value>
+  </data>
+  <data name="PokerFights_Phrase" xml:space="preserve">
+    <value>Poker's Craziest Fights</value>
+  </data>
+  <data name="PokerHands_Caption" xml:space="preserve">
+    <value>BIGGEST HANDS</value>
+  </data>
+  <data name="PokerHands_Key" xml:space="preserve">
+    <value>PokerHandsVids</value>
+  </data>
+  <data name="PokerHands_Phrase" xml:space="preserve">
+    <value>Poker's Biggest Hands</value>
+  </data>
+  <data name="PokerMenuTitle" xml:space="preserve">
+    <value>Poker's Top Ten</value>
+  </data>
+  <data name="PokerTopTen" xml:space="preserve">
+    <value>TOP TEN {0}</value>
+  </data>
+  <data name="Site_About" xml:space="preserve">
+    <value>Every developer needs a playground to experiment with new technologies, test design and layout ideas and labor over that pet project that keeps them up at night.  This site is my playground and, as you can see, one of my personal interests is poker, specifically Texas Hold’em.</value>
+  </data>
+  <data name="Site_Contact" xml:space="preserve">
+    <value>Send them an email at...</value>
+  </data>
+  <data name="Site_Email" xml:space="preserve">
+    <value>SticklesSoftware@gmail.com</value>
+  </data>
+  <data name="Site_Name" xml:space="preserve">
+    <value>Poker Playground</value>
+  </data>
+  <data name="Site_NoServer" xml:space="preserve">
+    <value>Oops! The Poker Playground server is not curently running.  Please aks the site administrator to start it.</value>
+  </data>
+  <data name="Site_Welcome" xml:space="preserve">
+    <value>Welcome to the Poker Playground</value>
+  </data>
+</root>

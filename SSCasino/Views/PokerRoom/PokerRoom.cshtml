@@ -1,0 +1,33 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // PokerRoom.cshtml
+    //      Renders the poker room page
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model PokerRoom
+
+@{
+    // Info and technology panel
+    @Html.Partial("_InfoPanel", Model.InformationPanel);
+
+    <div class="ssc_PokerRoom">
+        <div class="ssc_PokerRoom_Container">
+            <div class="ssc_PokerRoom_PlayArea">
+                <div class="ssc_PokerRoom_Table">
+                    <div class="ssc_PokerRoom_TableHeader">
+                        <div class="ssc_PokerRoom_TableMessage">Welcome to the poker room.</div>
+                        <div class="ssc_PokerRoom_TableMessage">This page is currently under construction.</div>
+                    </div>
+                </div>
+                <div class="ssc_PokerRoom_ActionsArea">Player Actions Area</div>
+            </div>
+            <div class="ssc_PokerRoom_OptionsArea">Player Options</div>
+        </div>
+    </div>
+
+}

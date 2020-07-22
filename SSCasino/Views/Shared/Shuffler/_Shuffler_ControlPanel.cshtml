@@ -1,0 +1,112 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _Shuffler_ControlPanel.cshtml
+    //      Renders the shuffler control panel
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model ShufflerControlPanel
+
+@{
+    <div class="ssc_ShufflerPanelContent">
+        <!-- Card Pack Selection -->
+        <div class="ssc_PanelLabelNoSpace">Select a card pack:</div>
+        @Html.DevExpress().ComboBox(settings =>
+        {
+            settings.Name = "cbo_ShufflerCardPacks";
+            settings.Width = Unit.Percentage(100);
+            settings.ControlStyle.CssClass = "ssc_PanelCombobox";
+            settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+            settings.Properties.TextField = "CardPackName";
+            settings.Properties.ValueField = "CardPackId";
+            settings.Properties.ValueType = typeof(int);
+            settings.SelectedIndex = (Model.SelectedCardPack.CardPackId - 1);
+            settings.Properties.ClientSideEvents.SelectedIndexChanged = "cbo_ShufflerCardPacks_SelectedIndexChanged";
+        }).BindList(Model.CardPacks).GetHtml()
+
+        <!-- Card Pack Examples -->
+        @Html.Partial("_Shuffler_CardExamplesCBP", Model.SelectedCardPack)
+
+        <!-- Deal Type or Sample Size -->
+        <div class="ssc_PanelSection">
+            @if (Model.ShuffleMode == SiteHelpers.ShuffleMode.Standard)
+            {
+                @Html.DevExpress().CheckBox(settings =>
+                {
+                    settings.Name = "chk_FisherYates";
+                    settings.Text = "Fisher-Yates Shuffle";
+                    settings.ControlStyle.CssClass = "ssc_PanelCheckbox";
+                    settings.Properties.ValueType = typeof(int);
+                    settings.Properties.ValueUnchecked = 0;
+                    settings.Properties.ValueChecked = 1;
+                    settings.Checked = (Model.ShuffleType == SiteHelpers.ShuffleTypes.FisherYates);
+                    settings.Properties.ClientSideEvents.ValueChanged = "chk_FisherYates_ValueChanged";
+                }).GetHtml()
+
+                @Html.DevExpress().CheckBox(settings =>
+                {
+                    settings.Name = "chk_Naive";
+                    settings.Text = "Naive Shuffle";
+                    settings.ControlStyle.CssClass = "ssc_PanelCheckbox";
+                    settings.Properties.ValueType = typeof(int);
+                    settings.Properties.ValueUnchecked = 0;
+                    settings.Properties.ValueChecked = 2;
+                    settings.Checked = (Model.ShuffleType == SiteHelpers.ShuffleTypes.Naive);
+                    settings.Properties.ClientSideEvents.ValueChanged = "chk_Naive_ValueChanged";
+                }).GetHtml()
+            }
+            else
+            {
+                @Html.DevExpress().CheckBox(settings =>
+                {
+                    settings.Name = "chk_FourCardSample";
+                    settings.Text = "Four Card Sample";
+                    settings.ControlStyle.CssClass = "ssc_PanelCheckbox";
+                    settings.Properties.ValueType = typeof(int);
+                    settings.Properties.ValueUnchecked = 0;
+                    settings.Properties.ValueChecked = 1;
+                    settings.Checked = (Model.SampleSize == SiteHelpers.SampleSizes.FourCardSample);
+                    settings.Properties.ClientSideEvents.ValueChanged = "chk_FourCardSample_ValueChanged";
+                }).GetHtml()
+
+                @Html.DevExpress().CheckBox(settings =>
+                {
+                    settings.Name = "chk_SixCardSample";
+                    settings.Text = "Six Card Sample";
+                    settings.ControlStyle.CssClass = "ssc_PanelCheckbox";
+                    settings.Properties.ValueType = typeof(int);
+                    settings.Properties.ValueUnchecked = 0;
+                    settings.Properties.ValueChecked = 2;
+                    settings.Checked = (Model.SampleSize == SiteHelpers.SampleSizes.SixCardSample);
+                    settings.Properties.ClientSideEvents.ValueChanged = "chk_SixCardSample_ValueChanged";
+                }).GetHtml()
+            }
+        </div>
+
+        <!-- Shuffle Options -->
+        <div class="ssc_PanelSection">
+            <div class="ssc_PanelLabel">Number of shuffles:</div>
+            @Html.DevExpress().TextBox(settings =>
+            {
+                DevExpressHelpers.Render_Textbox(settings, false, false, "txt_ShuffleCount", HorizontalAlign.Right, styleClass: "ssc_PanelTextbox", lostFocusHandler: "txt_ShuffleCount_LostFocus");
+                settings.Properties.ClientSideEvents.Init = "txt_ShuffleCount_Init";
+                settings.Properties.ClientSideEvents.GotFocus = "txt_ShuffleCount_GotFocus";
+            }).GetHtml()
+            <div id="div_ShuffleWarning" class="ssc_PanelWarning">@Model.ShufflerWarning</div>
+        </div>
+
+        <!-- Shuffle Actions -->
+        <div id="cmd_ShuffleButton" class="ssc_ShuffleButton" onclick="cmd_ShuffleButton_OnClick();"></div>
+        <div id="cmd_ResetButton" class="ssc_ResetButton" onclick="cmd_ResetButton_OnClick();"></div>
+    </div>
+
+    <!-- Hidden Fields -->
+    @Html.Hidden("hdnShufflerMode", (int)Model.ShuffleMode);
+    @Html.Hidden("hdnMinShuffles", Model.MinShuffles);
+    @Html.Hidden("hdnMaxShuffles", Model.MaxShuffles);
+    @Html.Hidden("hdnShuffleCount", Model.ShuffleCount);
+}

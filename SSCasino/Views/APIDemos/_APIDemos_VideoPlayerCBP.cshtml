@@ -1,0 +1,28 @@
+﻿@*
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _APIDemos_VideoCBP.cshtml
+    //      Callback panel for the video player
+    //========================================================================================================================
+*@
+
+@using SSCasino;
+@using SSCasino.Models;
+@model YouTubeAPI
+
+@Html.DevExpress().CallbackPanel(
+    settings =>
+    {
+        // Assign general and shared properties
+        DevExpressHelpers.Render_CallbackPanel(settings, "cbp_VideoPlayer", "Home", "APIDemos_LoadNewVideo", "", true, true);
+
+        // Content
+        settings.SetContent(() =>
+        {
+            Html.RenderPartial("_APIDemos_VideoPlayer", Model);
+        });
+    }
+).GetHtml()
+
+

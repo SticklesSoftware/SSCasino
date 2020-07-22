@@ -1,0 +1,24 @@
+﻿@{
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _UserPrompt_Dialog.cshtml
+//      This page renders the popup window used to display user prompts / messages
+//========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model UserPrompt
+
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        // Make this popup act like a system dialog
+        DevExpressHelpers.Popup_AsSystemDialog(settings, "dlgUserPrompt", "Common", "ShowUserPrompt", true, false, "Poker Playground", 500, 200);
+
+        // Dialog content
+        settings.SetContent(Html.Partial("_UserPrompt_Content", Model).ToHtmlString());
+    }).GetHtml()
+
+

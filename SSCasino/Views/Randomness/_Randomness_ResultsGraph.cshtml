@@ -1,0 +1,60 @@
+﻿@*
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _Randomness_ResultsGraph.cshtml
+    //      Shuffling results graph on the randomness comparison page.
+    //========================================================================================================================
+*@
+
+@using SSCasino.Models;
+@model ShuffleResultsGraph
+
+@Html.DevExpress().Chart(settings =>
+{
+    settings.Name = "graph_ShuffleResults";
+    settings.Width = Unit.Pixel(Model.ResizeWidth - 40);
+    settings.Height = Unit.Pixel(Model.ResizeHeight - 40);
+    settings.PaletteName = "Office 2013";
+    settings.RenderFormat = DevExpress.XtraCharts.Web.RenderFormat.Svg;
+
+    settings.BorderOptions.Visibility = DefaultBoolean.True;
+    settings.BorderOptions.Thickness = 4;
+    settings.CrosshairEnabled = DefaultBoolean.True;
+    settings.SaveStateOnCallbacks = false;
+    settings.CallbackRouteValues = new { controller = "Home", action = "Randomness_RefreshResultsGraph" };
+
+    // Client side events
+    settings.ClientSideEvents.BeginCallback = "graph_ShuffleResults_BeginCallback";
+    settings.ClientSideEvents.EndCallback = "graph_ShuffleResults_EndCallback";
+
+    settings.Legends.Default(l =>
+    {
+        l.AlignmentHorizontal = LegendAlignmentHorizontal.Right;
+        l.MarkerMode = LegendMarkerMode.Marker;
+    });
+
+    settings.Series.Template(t =>
+    {
+        t.Views().SideBySideBarSeriesView(v =>
+        {
+            v.SeriesLabel(l =>
+            {
+
+                l.Position = BarSeriesLabelPosition.Top;
+                l.TextOrientation = TextOrientation.Horizontal;
+                l.Indent = 12;
+                l.ResolveOverlappingMode = ResolveOverlappingMode.Default;
+            });
+        });
+        t.SetDataMembers("ShufflePattern", "PatternCount");
+        t.LabelsVisibility = DefaultBoolean.False;
+    });
+
+    settings.XYDiagram(d =>
+    {
+        d.AxisY.Interlaced = true;
+        d.AxisY.Title.Text = "Number of Duplicates";
+        d.AxisY.Title.Visibility = DefaultBoolean.True;
+    });
+}).Bind(Model.ShuffleResultsAggregated, seriesDataMember: "ShuffleType").GetHtml()

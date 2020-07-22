@@ -1,0 +1,24 @@
+﻿@{
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _PageErrors_Dialog.cshtml
+//      This page renders the popup window used to display page errors
+//========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model PageErrors
+
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        // Make this popup act like a system dialog
+        DevExpressHelpers.Popup_AsSystemDialog(settings, "dlgPageErrors", "Common", "ShowPageErrors", true, false, "Poker Playground", 500, 200);
+
+        // Dialog content
+        settings.SetContent(Html.Partial("_PageErrors_Content", Model).ToHtmlString());
+    }).GetHtml()
+
+

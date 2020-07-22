@@ -1,0 +1,164 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // UnhandledError.cshtml
+    //      This page renders the information about an unhandled run time error.
+    //
+    // Developer Notes
+    //      This page can be requested in the following ways:
+    //          1) Each controller contains an error section which is used to catch and handle exceptions.
+    //          2) This website adds an application level error handler using the following method
+    //                  DevExpress.Web.ASPxWebControl.CallbackError += Application_Error (Global.asax.cs)
+    //
+    //      In either case the exception information is saved in a session variable so itb can be retrieved here for display
+    //      purposes.
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model Exception
+
+@{
+    // Form Header
+    FormHeader formHeader = new FormHeader("~/Content/Images/ErrorHandling/ErrorHeader.png",
+        "Oops! Something went wrong. See the messages below to try and resolve the issue or contact the portal administrator.",
+        "ssc_FullForm"
+    );
+    @Html.Partial("_FormHeader", formHeader);
+
+    // Form Fields - Error Source & Message
+    <div class="ssc_FullForm">
+        <div class="ssc_FormFieldArea">
+            <div class="ssc_Table">
+                <div class="ssc_TableRow">
+                    <div class="ssc_FieldLable">
+                        @Html.DevExpress().Label(settings =>
+                        {
+                            settings.Text = "Error Source:";
+                            settings.ControlStyle.CssClass = "ssc_FormLabel ssc_TextBold";
+                        }).GetHtml()
+                    </div>
+                    <div class="ssc_FieldValue">
+                        @Html.DevExpress().TextBox(settings =>
+                        {
+                            settings.Name = "txtErrorSource";
+                            settings.ReadOnly = true;
+                            settings.Width = Unit.Percentage(100);
+                            settings.ControlStyle.CssClass = "ssc_FormInputField";
+                            settings.Text = Model.Source;
+                        }).GetHtml()
+                    </div>
+                </div>
+                <div class="ssc_TableRow">
+                    <div class="ssc_FieldLable">
+                        @Html.DevExpress().Label(settings =>
+                        {
+                            settings.Text = "Error Message:";
+                            settings.ControlStyle.CssClass = "ssc_FormLabel ssc_TextBold";
+                        }).GetHtml()
+                    </div>
+                    <div class="ssc_FieldValue">
+                        @Html.DevExpress().TextBox(settings =>
+                        {
+                            settings.Name = "txtErrorMessage";
+                            settings.ReadOnly = true;
+                            settings.Width = Unit.Percentage(100);
+                            settings.ControlStyle.CssClass = "ssc_FormInputField";
+                            settings.Text = Model.Message;
+                        }).GetHtml()
+                    </div>
+                </div>
+                <div class="ssc_TableRow">
+                    <div class="ssc_FieldLable">
+                        @Html.DevExpress().Label(settings =>
+                        {
+                            settings.Text = "Target Site:";
+                            settings.ControlStyle.CssClass = "ssc_FormLabel ssc_TextBold";
+                        }).GetHtml()
+                    </div>
+                    <div class="ssc_FieldValue">
+                        @Html.DevExpress().TextBox(settings =>
+                        {
+                            settings.Name = "txtTargetSite";
+                            settings.ReadOnly = true;
+                            settings.Width = Unit.Percentage(100);
+                            settings.ControlStyle.CssClass = "ssc_FormInputField";
+                            settings.Text = Model.TargetSite.Name;
+                        }).GetHtml()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    // Form Fields - Call Stack
+    <div class="ssc_FullForm ssc_VSpaceSmall">
+        <div class="ssc_CallStackHeader">Call Stack</div>
+        <div class="ssc_CallStack">
+            @{
+                if (!string.IsNullOrWhiteSpace(Model.StackTrace))
+                {
+                    string[] callStack = Model.StackTrace.Split('\n');
+
+                    int row = 0;
+                    string styleClass = "";
+                    foreach (string stackEntry in callStack)
+                    {
+                        row += 1;
+                        if ((row % 2) == 0)
+                        {
+                            styleClass = SiteHelpers.ErrorEvenRowClass;
+                        }
+                        else
+                        {
+                            styleClass = SiteHelpers.ErrorOddRowClass;
+                        }
+                        <div class="@styleClass">@stackEntry</div>
+                    }
+                }
+            }
+        </div>
+    </div>
+
+    // Form Fields - Actions
+    <div class="ssc_FullForm ssc_VSpaceMedium">
+        <div class="ssc_Table">
+            <div class="ssc_TableRow">
+                <div class="ssc_TableCell"><!-- Filler Cell --></div>
+                <div class="ssc_RightButton">
+                    <div id="cmd_HomeButton" class="ssc_ErrHomeButton" onclick="cmd_HomeButton_OnClick();"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ssc_FullForm ssc_VSpaceMedium"></div>
+
+    //========================================================================================================================
+    // Clear the exception and critical error flag in the session object
+    //========================================================================================================================
+    Session[SiteHelpers.CriticalError] = false;
+    Session.Remove(SiteHelpers.RunError);
+
+    //========================================================================================================================
+    // Deveoper Notes
+    //      First a brief description  of the site error handling...
+    //          1) Page Errors (Model Errors) are handled via a popup common error dialog
+    //          2) Runtime Exceptions are handled by a generic error page
+    //          3) Web.config specifies the following:
+    //              <customErrors mode="On" defaultRedirect="~/Home/UnhandledError"></customErrors>
+    //
+    //      This hidden field is KEY to having our error handling work properly. When a form is submitted using AJAX and no
+    //      page errors occurr but a runtime exception does, the generic error page is displayed but then the site may get
+    //      redirected to some other page. This happens because the AJAX form has no idea that a runtime exception has
+    //      occurred and since no page erros have occurred the OnSuccess routine specified for the AJAX form will execute and
+    //      may redirect to another page.
+    //
+    //      In order to avoid this, any page that uses an AJAX form will define hidden field and set its value to FALSE to
+    //      allow normal processing after an AJAX form submission. If a runtime exception occurrs this page will define the
+    //      hidden field and set its value to TRUE. Then when the OnSuccess routine executes it will check the value of this
+    //      field and avoid further processing if a runtime exception has occurred.
+    //========================================================================================================================
+    @Html.Hidden("hdnRuntimeException", true);
+}

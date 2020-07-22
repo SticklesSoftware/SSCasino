@@ -1,0 +1,22 @@
+﻿@{
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _FormHeader.cshtml
+//      This page renders a form header based on the properties in the model
+//========================================================================================================================
+}
+
+@using SSCasino.Models;
+@model FormHeader
+
+@{
+    <div class="ssc_FormHeader @Model.FormStyles">
+        <div class="ssc_Table">
+            <div class="ssc_TableRow">
+                <div class="ssc_TableCell ssc_FHImage"><img alt="Form Iamge" src="@Url.Content(Model.FormImage)" /></div>
+                <div class="ssc_TableCell ssc_FHText">@Model.FormTitle</div>
+            </div>
+        </div>
+    </div>
+}

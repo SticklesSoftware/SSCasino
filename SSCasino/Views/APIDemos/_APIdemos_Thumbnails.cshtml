@@ -1,0 +1,31 @@
+﻿@*
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _APIDemos_Thumbnails.cshtml
+    //      Renders the thumbnails area
+    //========================================================================================================================
+*@
+
+@using SSCasino;
+@using SSCasino.Models;
+@model YouTubeAPI
+
+@{
+    <div class="ssc_APIDemos_ThumbnailsHeader">@Model.SelectedCategory</div>
+    <div class="ssc_APIDemos_ThumbnailsContainer">
+        @foreach (YouTubeSearchResult result in Model.SearchRequest.SearchResults)
+        {
+            <div name="div_ThumbnailRow" class="ssc_APIDemos_ThumbnailRow" onclick='div_ThumbnailRow_OnClick(@result.ResultNo, "@result.YouTubeURL");'>
+                <div class="ssc_APIDemos_ThumbnailCol"><img src="@Url.Content(result.ThumbnailURL)" /></div>
+                <div class="ssc_APIDemos_ThumbnailInfoCol">
+                    <div class="ssc_APIDemos_ThumbnailTitle">@result.Title</div>
+                    <div class="ssc_APIDemos_ThumbnailDesc">@result.Description</div>
+                </div>
+            </div>
+        }
+    </div>
+
+    @Html.Hidden("hdn_SelectedVideoURL", Model.SelectedVideoURL);
+    @Html.Hidden("hdn_SelectedVideoResultNo", Model.SelectedVideoResultNo);
+}

@@ -1,0 +1,26 @@
+﻿@*
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _Shuffler_CardExamplesCBP.cshtml
+    //      Callback panel for the card examples area in the shuffler control panel
+    //========================================================================================================================
+*@
+
+@using SSCasino;
+@using SSCasino.Models;
+@model CardPack
+
+@Html.DevExpress().CallbackPanel(
+    settings =>
+    {
+        // Assign general and shared properties
+        DevExpressHelpers.Render_CallbackPanel(settings, "cbp_ShufflerCardExamples", "Home", "ShufflerControlPanel_ChangeCardPack", "", true, true);
+
+        // Content
+        settings.SetContent(() =>
+        {
+            Html.RenderPartial("_Shuffler_CardExamples", Model);
+        });
+    }
+).GetHtml()

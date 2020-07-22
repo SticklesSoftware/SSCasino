@@ -1,0 +1,18 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _APIDemos_VideoPlater.cshtml
+    //      Renders the YouTube video player
+    //========================================================================================================================
+}
+
+@using SSCasino.Models;
+@model YouTubeAPI
+
+@{
+    // Load the selected player into the video player
+    <div class="ssc_ResponsiveVideo">
+        <iframe class="ssc_ResponsiveIFrame ssc_APIDemos_VideoPlayer" src="@Model.SelectedVideoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+}

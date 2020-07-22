@@ -1,0 +1,33 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _SiteHeadrer.cshtml
+    //      Renders the site header
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model SiteHeader
+
+@{
+    // The site header contains...
+    //      Logo and casino name (Left)
+    //      Page links (Right)
+    <div class="ssc_SiteHeader">
+        <div class="ssc_SiteLogo"><a href="@Url.Action("Home", "Home")"><img class="ssc_ResponsiveImage" alt="Poker Playground Logo" src="@Url.Content("~/Content/Images/SiteHeader/SpadeLogo.png")" /></a></div>
+        <div class="ssc_SiteName">@Model.SiteName</div>
+
+        <div id="div_MiniMenuContainer" class="ssc_FloatRight ssc_Hidden">
+            <div id="div_MiniMenu" class="ssc_SiteLink ssc_HeaderLink ssc_MiniMenuImage" onclick="div_MiniMenu_OnClick();"><img class="ssc_ResponsiveImage" alt="Mini Menu" src="@Url.Content("~/Content/Images/SiteHeader/MiniMenu.png")" /></div>
+        </div>
+        <div id="div_StandardMenuContainer" class="ssc_FloatRight">
+            <div class="ssc_SiteLink"><a class="ssc_HeaderLink" href="@Url.Action("PokerRoom", "Home")"><img class="ssc_ResponsiveImage" alt="Poker Room" src="@Url.Content("~/Content/Images/SiteHeader/PokerLink.png")" /></a></div>
+            <div class="ssc_SiteLink"><a class="ssc_HeaderLink" href="@Url.Action("APIDemos", "Home")"><img class="ssc_ResponsiveImage" alt="Amazon" src="@Url.Content("~/Content/Images/SiteHeader/APIsLink.png")" /></a></div>
+            <div class="ssc_SiteLink"><a class="ssc_HeaderLink" href="@Url.Action("CardShuffler", "Home")"><img class="ssc_ResponsiveImage" alt="Card Shuffler" src="@Url.Content("~/Content/Images/SiteHeader/ShuffleLink.png")" /></a></div>
+            <div class="ssc_SiteLink"><a class="ssc_HeaderLink" href="@Url.Action("Randomness", "Home")"><img class="ssc_ResponsiveImage" alt="Randomness" src="@Url.Content("~/Content/Images/SiteHeader/JokerLink.png")" /></a></div>
+            <div class="ssc_SiteLink"><a class="ssc_HeaderLink" href="@Url.Action("Home", "Home")"><img class="ssc_ResponsiveImage" alt="Home" src="@Url.Content("~/Content/Images/SiteHeader/HomeLink.png")" /></a></div>
+        </div>
+    </div>
+}

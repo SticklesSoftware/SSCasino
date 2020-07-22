@@ -1,0 +1,43 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _UserPrompt_Content.cshtml
+    //      This page renders the content for the user prompt dialog
+    //========================================================================================================================
+}
+
+@using SSCasino.Models;
+@model UserPrompt
+
+@{
+    // Dialog Header
+    <div class="ssc_DialogHeader">
+        <div class="ssc_Table">
+            <div class="ssc_TableRow">
+                <div class="ssc_TableCell ssc_DialogImage"><img alt="User Prompt" src="@Url.Content("~/Content/Images/Dialogs/Info.png")" /></div>
+                <div class="ssc_TableCell ssc_DialogMessage">@Model.Prompt</div>
+            </div>
+        </div>
+    </div>
+
+    // Dialog footer
+    <div class="ssc_DialogFooterAndSpace">
+        <div class="ssc_DialogButton">
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "cmdUserPromptClose";
+                settings.Text = "Close";
+                settings.ControlStyle.CssClass = "ssc_FormButton";
+                settings.Width = Unit.Pixel(80);
+
+                if (Model.PromptFunctionName != "")
+                    settings.ClientSideEvents.Click = Model.PromptFunctionName;
+                else
+                    settings.ClientSideEvents.Click = "function(sender, eventArgs) {dlgUserPrompt.Hide()}";
+            }).GetHtml()
+        </div>
+    </div>
+}
+
+

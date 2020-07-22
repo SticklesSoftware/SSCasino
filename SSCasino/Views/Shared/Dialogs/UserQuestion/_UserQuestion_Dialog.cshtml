@@ -1,0 +1,24 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _UserQuestion_Dialog.cshtml
+    //      This page renders the popup window used to display user questions
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model UserQuestion
+
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        // Make this popup act like a system dialog
+        DevExpressHelpers.Popup_AsSystemDialog(settings, "dlgUserQuestion", "Common", "ShowUserQuestion", true, false, "Poker Playground", 500, 200);
+
+        // Dialog content
+        settings.SetContent(Html.Partial("_UserQuestion_Content", Model).ToHtmlString());
+    }).GetHtml()
+
+

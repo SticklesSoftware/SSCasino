@@ -1,0 +1,31 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // CardShuffler.cshtml
+    //      Renders the card shuffler page
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model CardShuffler
+
+@section PageIncludes {
+    <script src="@Url.Content("~/Scripts/Casino/Shuffle.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Casino/CardShuffler.js")" type="text/javascript"></script>
+}
+
+@{
+    // Info and technology panel
+    @Html.Partial("_InfoPanel", Model.InformationPanel);
+
+    // The card shuffler page is split into two areas...
+    //      The left side displays the cards
+    //      The right side displays the shuffler control panel
+    <div class="ssc_CardAreaBox">
+        <div class="ssc_CardArea ssc_CardShuffler_CardAreaSpace">@Html.Partial("_CardShuffler_DisplayCBP", Model.CardPack.CardDeck)</div>
+        <div class="ssc_ShufflerPanel">@Html.Partial("_Shuffler_ControlPanelCBP", Model.ControlPanel)</div>
+    </div>
+
+}

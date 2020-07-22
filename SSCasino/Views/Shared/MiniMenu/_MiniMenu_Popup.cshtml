@@ -1,0 +1,30 @@
+﻿@{
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _MiniMenu_Popup.cshtml
+//      Renders the popup window used to implement the site's mini menu
+//========================================================================================================================
+}
+
+@using SSCasino;
+
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        // General settings
+        settings.Name = "pop_MiniMenu";
+
+        // Server side callbacks
+        settings.LoadContentViaCallback = LoadContentViaCallback.OnFirstShow;
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "MiniMenu" };
+
+        // Client side events
+        settings.ClientSideEvents.EndCallback = "pop_MiniMenu_EndCallback";
+
+        // Make this popup act like a floating menu
+        DevExpressHelpers.Popup_AsFloatingMenu(settings);
+
+        // Menu items...
+        settings.SetContent(Html.Partial("_MiniMenu_Items").ToHtmlString());
+    }).GetHtml()

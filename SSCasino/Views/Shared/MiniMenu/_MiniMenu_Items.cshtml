@@ -1,0 +1,25 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _MiniMenu_Items.cshtml
+    //      Renders the items for the site's mini menu
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+
+@{
+    // The site header contains...
+    //      Logo and casino name (Left)
+    //      Page links (Right)
+    <div class="ssc_MiniMenu">
+        <div><a class="ssc_MiniMenuItem" href="@Url.Action("Home", "Home")">Home</a></div>
+        <div><a class="ssc_MiniMenuItem" href="@Url.Action("Randomness", "Home")">Randomness</a></div>
+        <div><a class="ssc_MiniMenuItem" href="@Url.Action("CardShuffler", "Home")">Card Shuffler</a></div>
+        <div><a class="ssc_MiniMenuItem" href="@Url.Action("APIDemos", "Home")">API Demos</a></div>
+        <div><a class="ssc_MiniMenuItem" href="@Url.Action("PokerRoom", "Home")">Poker Room</a></div>
+    </div>
+}
+

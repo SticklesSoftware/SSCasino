@@ -1,0 +1,31 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _Randomness_Display.cshtml
+    //      Renders the card display area on the randomness comparison page.
+    //========================================================================================================================
+}
+
+@using SSCasino.Models;
+@model Randomness
+
+@{
+    // Card display areas
+    <div id="div_CardSamples" class="ssc_CardSamples">
+        <div class="ssc_CardSamplesLeft">
+            <div class="ssc_ShuffleTitle">Fisher-Yates Shuffling Algorithm</div>
+            @Html.Partial("_Randomness_CardSamples", Model.ShuffledPackageFisher.CardPack.CardDeck)
+        </div>
+        <div class="ssc_CardSamplesRight">
+            <div class="ssc_ShuffleTitle">Naive Shuffling Algorithm</div>
+            @Html.Partial("_Randomness_CardSamples", Model.ShuffledPackageNaive.CardPack.CardDeck)
+        </div>
+    </div>
+
+    // Shuffle results area
+    <div class="ssc_ShuffleResults">
+        <div class="ssc_ShuffleTitle ssc_ShuffleResultsTitle">Shuffling Results: @Model.ShuffleResultsData.TotalShuffles Shuffles</div>
+        @Html.Partial("_Randomness_ResultsGraph", Model.ShuffleResultsData)
+    </div>
+}

@@ -1,0 +1,32 @@
+﻿@{
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _Exception_HiddenFields.cshtml
+//      This page renders hidden fields that hold information about the current page error.
+//========================================================================================================================
+}
+
+@model ModelStateDictionary
+
+@{
+// Flag that indicates if page errors exists
+    @Html.Hidden("hdnRuntimeException", false);
+    @Html.Hidden("hdnModelIsValid", Model.IsValid);
+
+    // If page errors exist...
+    if (!Model.IsValid)
+    {
+        // Save the error count
+        @Html.Hidden("hdnModelErrorCount", Model["ModelError"].Errors.Count);
+
+        // Save each error
+        int counter = 1;
+        foreach (ModelError modelError in Model["ModelError"].Errors)
+        {
+            @Html.Hidden(("hdnModelError" + counter.ToString()), modelError.ErrorMessage);
+            counter += 1;
+        }
+    }
+}
+

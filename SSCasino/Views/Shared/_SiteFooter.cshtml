@@ -1,0 +1,20 @@
+﻿@{
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _SiteFooter.cshtml
+    //      This page renders the site footer.
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model SiteFooter
+
+@{
+    // Common Dialogs
+    @Html.Partial("_UserPrompt_Dialog", Model.UserPrompt)
+    @Html.Partial("_UserQuestion_Dialog", Model.UserQuestion)
+    @Html.Partial("_PageErrors_Dialog", Model.PageErrors)
+    @Html.Partial("_MiniMenu_Popup")
+}
+

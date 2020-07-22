@@ -1,0 +1,27 @@
+﻿@*
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _Shuffler_ControlPanelCBP.cshtml
+    //      Callback panel for the shuffler control panel.
+    //========================================================================================================================
+*@
+
+@using SSCasino;
+@using SSCasino.Models;
+@model ShufflerControlPanel
+
+@Html.DevExpress().CallbackPanel(
+    settings =>
+    {
+        // Assign general and shared properties
+        DevExpressHelpers.Render_CallbackPanel(settings, "cbp_ShufflerControlPanel", "Home", "ShufflerControlPanel_Reset", "", true, true);
+
+        // Content
+        settings.SetContent(() =>
+        {
+            Html.RenderPartial("_Shuffler_ControlPanel", Model);
+        });
+    }
+).GetHtml()
+

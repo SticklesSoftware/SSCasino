@@ -1,0 +1,1249 @@
+﻿/*
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// Casino.css
+//      Style shared across the site
+//========================================================================================================================
+*/
+
+/*
+//========================================================================================================================
+// Body
+//========================================================================================================================
+*/
+
+body {
+    background-color: #333333;
+    font-family: Footlight MT, Arial;
+    font-size: 14pt;
+    color: #e5e5e5;
+    margin: 0px;
+    padding: 0px;
+}
+
+.ssc_SiteBody {
+    padding-top: 120px;
+}
+
+
+/*
+//========================================================================================================================
+// Site Header
+//========================================================================================================================
+*/
+
+.ssc_SiteHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    z-index: 999;
+    padding: 0px;
+    border-bottom: solid 1px #aa964d;
+    background-color: #000000;
+    background-image: url("/Content/Images/SiteHeader/SuitHeadrer.png");
+    background-position: top left;
+    background-repeat: repeat-x;
+}
+
+.ssc_SiteLogo {
+    float: left;
+    padding: 20px;
+    width: 120px;
+}
+
+.ssc_SiteName {
+    float: left;
+    font-size: 28pt;
+    color: #aa964d;
+    white-space: nowrap;
+    line-height: 120px;
+}
+
+/*
+//--------------------------------------------------
+// Standard Menu
+//--------------------------------------------------
+*/
+
+.ssc_SiteLink {
+    float: right;
+    padding: 8px 18px;
+}
+
+.ssc_HeaderLink:hover {
+    filter: brightness(125%);
+    position: relative;
+    top: -5px;
+}
+
+/* Swap the standard and mini menus at a specific screen or browser window size */
+@media screen and (max-width: 1070px) {
+    #div_MiniMenuContainer {
+        display: inline-block;
+    }
+
+    #div_StandardMenuContainer {
+        display: none;
+    }
+}
+
+/*
+//--------------------------------------------------
+// Mini Menu
+//--------------------------------------------------
+*/
+
+.ssc_MiniMenuImage {
+    margin-top: 20px;
+}
+
+.ssc_MiniMenu {
+    border: 1px solid #aa964d;
+    background-color: #333333;
+    padding: 12px;
+}
+
+.ssc_MiniMenuItem {
+    font-family: 'Footlight MT';
+    font-size: 16pt;
+    color: #aa964d;
+    line-height: 150%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ssc_MiniMenuItem:hover {
+    text-decoration: underline;
+}
+
+
+/*
+//========================================================================================================================
+// Site Popup
+//========================================================================================================================
+*/
+    .ssc_SitePopup {
+        display: none;
+        width: 60vw;
+        position: absolute;
+        top: calc(10vh + 120px);
+        left: calc((100vw - 60vw) / 2);
+        z-index: 800;
+        margin: 20px auto;
+        padding: 20px 30px;
+        background-color: #333333;
+        border: 2px solid #aa964d;
+        border-radius: 16px;
+        box-shadow: 8px 16px 30px -8px #1a1a1a;
+    }
+
+.ssc_SitePopup_Logo {
+    float: left;
+    width: 64px;
+    margin-right: 20px;
+}
+
+.ssc_SitePopup_Title {
+    float: left;
+    line-height: 64px;
+    color: #aa964d;
+    font-size: 19pt
+}
+
+.ssc_SitePopup_Body {
+    margin-left: 84px;
+    color: #e5e5e5;
+    line-height: 125%;
+    font-size: 15pt;
+}
+
+.ssc_SitePopup_TechHeader {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: #aa964d;
+    font-size: 16pt;
+}
+
+.ssc_SitePopup_TechLineHeader, .ssc_SitePopup_TechLineBody {
+    padding-bottom: 12px;
+    font-size: 14pt;
+}
+
+.ssc_SitePopup_TechLineHeader {
+    margin-left: 84px;
+    color: #e5e5e5;
+}
+
+.ssc_SitePopup_TechLineBody {
+    color: #2f9bb8;
+}
+
+.ssc_CloseButton {
+    width: 140px;
+    height: 39px;
+    margin: 30px auto 0px auto;
+    background-image: url("/Content/Images/Home/CloseButtonUp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ssc_CloseButton:active {
+    background-image: url("/Content/Images/Home/CloseButtonDown.png");
+}
+
+
+/*
+//========================================================================================================================
+// Server Not Running Page
+//========================================================================================================================
+*/
+
+.ssc_NoServerContainer {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: rgb(102,89,41);
+    background: radial-gradient(circle, rgba(102,89,41,1) 0%, rgba(47,45,39,1) 100%);
+}
+
+.ssc_NoServerBox {
+    border: 1px solid #aa964d;
+    background-color: #333333;
+    padding: 30px;
+}
+
+.ssc_NoServerImage {
+    float: left;
+    width: 80px;
+    margin-right: 20px;
+}
+
+.ssc_NoServerMessage {
+    float: left;
+    font-size: 18pt;
+    line-height: 69px;
+    color: #aa964d;
+}
+
+.ssc_NoServerContact {
+    font-size: 14pt;
+    color: #e5e5e5;
+    padding-top: 12px;
+}
+
+
+/*
+//========================================================================================================================
+// Home Page
+//========================================================================================================================
+*/
+
+.ssc_HomeContainer {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    background: rgb(102,89,41);
+    background: radial-gradient(circle, rgba(102,89,41,1) 0%, rgba(47,45,39,1) 100%);
+}
+
+.ssc_HomeColumn {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.ssc_HomeTitle {
+    font-size: 4vh;
+    color: #aa964d;
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+.ssc_AreaLink {
+    filter: opacity(25%);
+}
+
+.ssc_AreaLink:hover {
+    animation: brighten .5s steps(10, end);
+    filter: opacity(100%);
+}
+
+@keyframes brighten {
+    0% {
+        filter: opacity(25%);
+    }
+    100% {
+        filter: opacity(100%);
+    }
+}
+
+
+/*
+//========================================================================================================================
+// Shuffler Control Panel
+//========================================================================================================================
+*/
+.ssc_ShufflerPanel {
+    width: 18%;
+    max-width: 18%;
+    min-width: 230px;
+    background-color: #666666;
+    border-left: 2px solid #aa964d;
+    min-height: calc(100vh - 120px);
+    padding: 12px;
+    text-align: center;
+}
+
+.ssc_ShufflerPanelContent {
+    width: 90%;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.ssc_PanelSection {
+    margin-top: 30px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.ssc_PanelWarning {
+    display: none;
+    border: 1px solid #fffe80;
+    padding: 4px 8px;
+    margin-top: 4px;
+    font-family: Arial;
+    font-size: 11pt;
+    color: #fffe80;
+}
+
+.ssc_PanelLabel, .ssc_PanelLabelNoSpace {
+    font-family: Footlight MT, Arial;
+    font-size: 14pt;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.ssc_PanelLabel {
+    margin-top: 12px;
+}
+
+.ssc_PanelCardExamplesArea {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 12px;
+}
+
+.ssc_PanelCardExample {
+    width: 80px;
+}
+
+.ssc_PanelCombobox {
+    border-left: 10px solid #aa964d;
+    border-top: 1px solid #aa964d;
+    border-right: 1px solid #aa964d;
+    border-bottom: 1px solid #aa964d;
+    font-family: Footlight MT, Arial;
+    font-size: 14pt;
+    color: #1a1a1a;
+}
+
+.ssc_PanelCheckbox {
+    height: 30px;
+    font-family: Footlight MT, Arial;
+    font-size: 14pt;
+    color: #e5e5e5;
+}
+
+.ssc_PanelTextbox {
+    border-left: 10px solid #aa964d;
+    border-top: 1px solid #aa964d;
+    border-right: 1px solid #aa964d;
+    border-bottom: 1px solid #aa964d;
+    text-align: right;
+    font-family: Footlight MT, Arial;
+    font-size: 14pt;
+    color: #1a1a1a;
+}
+
+.ssc_ShuffleButton {
+    width: 180px;
+    height: 50px;
+    display: inline-block;
+    margin-top: 20px;
+    background-image: url("/Content/Images/Shared/ShuffleButtonUp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ssc_ShuffleButton:active {
+    background-image: url("/Content/Images/Shared/ShuffleButtonDown.png");
+}
+
+.ssc_ResetButton {
+    width: 180px;
+    height: 50px;
+    display: inline-block;
+    margin-top: 12px;
+    background-image: url("/Content/Images/Shared/ResetButtonUp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ssc_ResetButton:active {
+    background-image: url("/Content/Images/Shared/ResetButtonDown.png");
+}
+
+
+/*
+//========================================================================================================================
+// Information Panel
+//========================================================================================================================
+*/
+
+.ssc_InfoPanel {
+    position: fixed;
+    top: 120px;
+    width: 100%;
+    z-index: 900;
+}
+
+.ssc_InfoPanelSlider {
+    display: none;
+    padding: 8px 12px 12px 12px;
+    background-color: #333333;
+    border-bottom: 1px solid #aa964d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ssc_InfoPanelEntryTitle, .ssc_InfoPanelEntryTitleSpace {
+    font-size: 13pt;
+    color: #aa964d;
+    text-decoration: underline;
+    padding-bottom: 8px;
+}
+
+.ssc_InfoPanelEntryTitle {
+    padding-top: 8px;
+}
+
+.ssc_InfoPanelEntryTitleSpace {
+    padding-top: 16px;
+}
+
+.ssc_InfoPanelEntryLineHeader, .ssc_InfoPanelEntryLineBody {
+    font-size: 13pt;
+    padding-bottom: 8px;
+}
+
+.ssc_InfoPanelEntryLineHeader {
+    width: 1px;
+    padding-right: 12px;
+    color: #e5e5e5;
+}
+
+.ssc_InfoPanelEntryLineBody {
+    color: #2f9bb8;
+}
+
+.ssc_InfoPanelEntrySpace {
+    padding-top: 8px;
+}
+
+.ssc_InfoPanelLink, .ssc_InfoPanelLink:active, .ssc_InfoPanelLink:visited {
+    text-decoration: underline;
+    color: #fffe80;
+}
+
+.ssc_InfoPanelLink:hover {
+    text-decoration: underline;
+    color: #80ffff;
+}
+
+.ssc_InfoPanelHandle {
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+/*
+//========================================================================================================================
+// Shared styles for card shuffler pages
+//========================================================================================================================
+*/
+
+.ssc_PlayingCard {
+    box-shadow: 8px 8px 6px -6px #1a1a1a;
+    min-width: 25px;
+}
+
+.ssc_SampleCard {
+    max-width: 100px;
+}
+
+.ssc_ShuffleTitle {
+    font-family: Footlight MT, Arial;
+    font-size: 18pt;
+    color: #e5e5e5;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.ssc_CardAreaBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.ssc_CardArea {
+    width: 82%;
+    background: #204e22;
+    background: radial-gradient(circle, rgba(39,173,104,1) 0%, rgba(32,78,34,1) 100%);
+}
+
+
+/*
+//========================================================================================================================
+// Card shuffler page
+//========================================================================================================================
+*/
+
+.ssc_CardShuffler_CardAreaSpace {
+    padding-top: 30px;
+}
+
+.ssc_CardShuffler_CardAreaContainer {
+    border: 2px solid #e5e5e5;
+    margin: 20px;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.ssc_CardShuffler_CardAreaRow {
+    overflow: hidden;
+}
+
+.ssc_CardShuffler_CardAreaCell {
+    width: calc((100% / 13) - 14px);
+    margin: 7px;
+    float: left;
+    text-align: center;
+}
+
+
+/*
+//========================================================================================================================
+// Randomness page
+//========================================================================================================================
+*/
+.ssc_CardSamples {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ssc_CardSamplesLeft, .ssc_CardSamplesRight {
+    width: 50%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.ssc_CardSamplesLeft {
+    border-right: 1px solid #aa964d;
+}
+
+.ssc_CardSamplesRight {
+    border-left: 1px solid #aa964d;
+}
+
+.ssc_CardSamplesDisplay {
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ssc_CardSamplesDisplay4Slot, .ssc_CardSamplesDisplay6Slot {
+    float: left;
+}
+
+.ssc_CardSamplesDisplay4Slot {
+    width: calc(100% / 4);
+}
+
+.ssc_CardSamplesDisplay6Slot {
+    width: calc(100% / 6);
+}
+
+.ssc_ShuffleResults {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: 0px 20px;
+}
+
+.ssc_ShuffleResultsTitle {
+    margin-bottom: 12px;
+}
+
+
+/*
+//========================================================================================================================
+// API Demos
+//========================================================================================================================
+*/
+
+/*
+//--------------------------------------------------
+// Page Structure
+//--------------------------------------------------
+*/
+.ssc_APIDemos {
+    min-height: calc(100vh - 120px);
+    padding: 30px;
+    color: #e5e5e5;
+    text-align: center;
+    background: rgb(158,31,31);
+    background: radial-gradient(circle, rgba(158,31,31,1) 0%, rgba(108,0,0,1) 100%);
+}
+
+.ssc_APIDemos_PageHeader {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ssc_APIDemos_PageHeaderLeft {
+    font-size: 28pt;
+}
+
+.ssc_APIDemos_PageHeaderRight {
+    flex-basis: 80%;
+}
+
+.ssc_APIDemos_Page {
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+
+.ssc_APIDemos_PageLeft {
+    flex-basis: 40%;
+}
+
+.ssc_APIDemos_PageRight {
+    flex-basis: 50%;
+}
+
+/*
+//--------------------------------------------------
+// Video Menu
+//--------------------------------------------------
+*/
+.ssc_APIDemos_VideoMenuTitle {
+    font-size: 28pt;
+    color: #aa964d;
+    flex-basis: 20%;
+}
+
+.ssc_APIDemos_CategoriesContainer {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    justify-content: space-around;
+    border-bottom: 1px solid #aa964d;
+}
+
+.ssc_APIDemos_CategoryTitle {
+    font-size: 24pt;
+    color: #aa964d;
+    text-align: center;
+    border-bottom: 1px solid #aa964d;
+    flex-basis: 100%;
+    padding-bottom: 12px;
+}
+
+.ssc_APIDemos_CategoryItem {
+    font-size: 18pt;
+    color: #e5e5e5;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.ssc_APIDemos_CategoryItem:hover {
+    text-decoration: underline;
+}
+
+/*
+//--------------------------------------------------
+// Video Player
+//--------------------------------------------------
+*/
+
+.ssc_APIDemos_VideoPlayer {
+    border: 2PX solid #aa964d;
+}
+
+/*
+//--------------------------------------------------
+// Thumbnails
+//--------------------------------------------------
+*/
+
+.ssc_APIDemos_ThumbnailsHeader {
+    font-size: 18pt;
+    font-family: 'Footlight MT';
+    color: #e5e5e5;
+    width: 90%;
+    margin: 0px auto;
+    border-bottom: 3px double #aa964d;
+}
+
+.ssc_APIDemos_ThumbnailsContainer {
+    max-height: 50vh;
+    overflow-y: scroll;
+    text-align: left;
+    margin-top: 20px;
+    background-color: #333333;
+    border: 1px solid #aa964d;
+    padding: 12px;
+}
+
+.ssc_APIDemos_ThumbnailRow {
+    display: flex;
+    flex-direction: column;
+    flex-flow: nowrap;
+    justify-content: space-around;
+    color: #1a1a1a;
+    padding: 8px;
+    border-bottom: 1px solid #666666;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.ssc_APIDemos_ThumbnailRowSelected {
+    background-color: rgba(170, 150, 78, 0.5);
+}
+
+.ssc_APIDemos_ThumbnailRow:hover {
+    background-color: rgba(170, 150, 78, 0.5);
+}
+
+.ssc_APIDemos_ThumbnailCol {
+    padding-right: 20px;
+    padding-bottom: 6px;
+}
+
+.ssc_APIDemos_ThumbnailInfoCol {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.ssc_APIDemos_ThumbnailTitle {
+    flex-basis: 100%;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 12px;
+    color: #aa964d;
+}
+
+.ssc_APIDemos_ThumbnailDesc {
+    color: #e5e5e5;
+}
+
+
+/*
+//========================================================================================================================
+// Poker Room
+//========================================================================================================================
+*/
+
+/*
+//--------------------------------------------------
+// Page Structure
+//--------------------------------------------------
+*/
+.ssc_PokerRoom {
+    min-height: calc(100vh - 120px);
+    background: #386e91;
+    background: radial-gradient(circle, rgba(39,123,173,1) 0%, rgba(56,110,145,1) 100%);
+}
+
+.ssc_PokerRoom_Container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.ssc_PokerRoom_PlayArea {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-basis: 85%;
+    padding-top: 20px;
+}
+
+.ssc_PokerRoom_Table {
+    border: 2px solid #4d9dcc;
+    width: 85%;
+    height: 60%;
+    margin: auto auto;
+    border-radius: 30vw;
+    text-align: center;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.ssc_PokerRoom_TableHeader {
+    padding-top: 40px;
+    height: 90%;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.ssc_PokerRoom_TableMessage {
+    font-weight: bold;
+    font-size: calc(12pt + 1.5vh);
+    color: #aa964d;
+    text-align: center;
+}
+
+.ssc_PokerRoom_ActionsArea {
+    margin-top: 20px;
+    border-top: 1px solid #4d9dcc;
+    background-color: #386e91;
+    padding: 12px;
+    min-height: 200px;
+    font-size: 3vh;
+}
+
+.ssc_PokerRoom_OptionsArea {
+    padding: 12px;
+    border-left: 1px solid #4d9dcc;
+    background-color: #386e91;
+    min-height: calc(100vh - 120px);
+    font-size: 3vh;
+    flex-basis: 15%;
+}
+
+
+/*
+//========================================================================================================================
+// Common Styles
+//========================================================================================================================
+*/
+
+.ssc_Hidden {
+    display: none;
+}
+
+.ssc_Visible {
+    display: block;
+}
+
+.ssc_AlignLeft {
+    text-align: left;
+}
+
+.ssc_AlignRight {
+    text-align: right;
+}
+
+.ssc_AlignCenter {
+    text-align: center;
+}
+
+.ssc_FloatParent {
+    overflow: hidden;
+}
+
+.ssc_FloatLeft {
+    float: left;
+}
+
+.ssc_FloatRight {
+    float: right;
+}
+
+.ssc_VSpaceSmall {
+    margin-top: 10px;
+}
+
+.ssc_VSpaceMedium {
+    margin-top: 20px;
+}
+
+.ssc_VSpaceLarge {
+    margin-top: 40px;
+}
+
+.ssc_ClearFix {
+    clear: both;
+}
+
+
+/*
+//========================================================================================================================
+// Common Text Styles
+//========================================================================================================================
+*/
+
+.ssc_TextBold {
+    font-weight: bold;
+}
+
+.ssc_TextSuccess {
+    color: #008001
+}
+
+.ssc_TextWarning {
+    color: #ff8200;
+}
+
+.ssc_TextError {
+    color: #a20707;
+}
+
+
+/*
+//========================================================================================================================
+// Responsive Video & Images
+//========================================================================================================================
+*/
+
+.ssc_ResponsiveImage {
+    width: 100%;
+    height: auto;
+}
+
+/*
+//--------------------------------------------------------------------------------
+// Developer Notes
+//      The padding of 56.25% is calculated for a 16:9 aspect ratio (9/16 = .5625)
+//--------------------------------------------------------------------------------
+*/
+.ssc_ResponsiveVideo {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.ssc_ResponsiveIFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*
+//========================================================================================================================
+// Error Handling
+//========================================================================================================================
+*/
+
+.ssc_CallStackHeader {
+    font-weight: bold;
+    color: #E5E5E5;
+    margin-bottom: 4px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #aa964d;
+    background-color: #666666;
+}
+
+.ssc_CallStack {
+    height: 40vh;
+    min-height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 5px;
+    color: #1a1a1a;
+    border: 1px solid #aa964d;
+}
+
+.ssc_CallStackEntry, .ssc_CallStackEntryEven, .ssc_CallStackEntryOdd {
+    padding: 6px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.ssc_CallStackEntryEven {
+    background-color: #7bc1eb;
+}
+
+.ssc_CallStackEntryOdd {
+    background-color: #cccccc;
+}
+
+.ssc_ErrHomeButton {
+    width: 180px;
+    height: 50px;
+    display: inline-block;
+    margin-top: 20px;
+    background-image: url("/Content/Images/ErrorHandling/HomeButtonUp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ssc_ErrHomeButton:active {
+    background-image: url("/Content/Images/ErrorHandling/HomeButtonDown.png");
+}
+
+
+/*
+//========================================================================================================================
+// Table Like DIVs 
+//========================================================================================================================
+*/
+
+.ssc_Table {
+    display: table;
+    width: 100%;
+}
+
+.ssc_TableCaption {
+    display: table-caption;
+}
+
+.ssc_TableColGroup {
+    display: table-column-group;
+}
+
+.ssc_TableColHeader {
+    display: table-header-group;
+}
+
+.ssc_TableBody {
+    display: table-row-group;
+}
+
+.ssc_TableColFooter {
+    display: table-footer-group;
+}
+
+.ssc_TableColumn {
+    display: table-column;
+}
+
+.ssc_TableRow {
+    display: table-row;
+}
+
+.ssc_TableCell, .ssc_FieldLable, .ssc_FieldValue, .ssc_FieldHeader, .ssc_RightButton, .ssc_LeftButton {
+    display: table-cell;
+}
+
+.ssc_FieldLable {
+    width: 1px;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.ssc_FieldValue {
+    vertical-align: middle;
+    padding-bottom: 10px;
+}
+
+.ssc_FieldHeader {
+    vertical-align: bottom;
+    padding-bottom: 4px;
+}
+
+.ssc_RightButton {
+    width: 1px;
+    text-align: right;
+    padding-left: 12px;
+}
+
+.ssc_LeftButton {
+    width: 1px;
+    text-align: left;
+    padding-right: 12px;
+}
+
+
+/*
+//========================================================================================================================
+// Common Dialogs
+//========================================================================================================================
+*/
+
+.ssc_DialogHeader {
+    padding: 20px 20px 0px 20px;
+}
+
+.ssc_DialogImage {
+    width: 1px;
+    padding-right: 8px;
+}
+
+.ssc_DialogMessage {
+    font-weight: bold;
+    line-height: 150%;
+    vertical-align: middle;
+}
+
+.ssc_DialogBody {
+    margin: 10px 20px 0px 20px;
+}
+
+.ssc_DialogFooter, .ssc_DialogFooterAndSpace {
+    text-align: right;
+    padding: 10px;
+    background-color: #95a1c3;
+    border-top: 1px solid #1a1a1a;
+    overflow: hidden;
+}
+
+.ssc_DialogFooterAndSpace {
+    margin-top: 20px;
+}
+
+.ssc_DialogButton {
+    float: right;
+    margin-right: 10px;
+}
+
+
+/*
+//========================================================================================================================
+// Forms
+//========================================================================================================================
+*/
+
+.ssc_FormHeader {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 8px 0px 6px 0px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ssc_FHImage {
+    width: 1px;
+    padding-right: 8px;
+}
+
+.ssc_FHText {
+    font-weight: bold;
+    color: #aa964d;
+    vertical-align: middle;
+}
+
+.ssc_FormFieldArea {
+    margin-top: 10px;
+}
+
+.ssc_NoFocusRect {
+    outline: 0;
+}
+
+.ssc_FormValidationArea {
+    width: 100%;
+    font-size: 11pt;
+    color: #1a1a1a;
+    overflow: hidden;
+    margin: 16px 0px;
+    border-top: solid 1px #1a1a1a;
+    border-bottom: solid 1px #1a1a1a;
+}
+
+.ssc_FormValidationMsg {
+    color: #bf0000;
+}
+
+.ssc_FormFooter {
+    margin-top: 20px;
+    border-bottom: 4px double #1a1a1a;
+}
+
+.ssc_FormMessage {
+    display: none;
+    font-size: 11pt;
+    margin-top: 20px;
+    border: 1px solid #1a1a1a;
+    padding: 8px;
+}
+
+.ssc_SmallForm {
+    width: 25%;
+    min-width: 325px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ssc_MediumForm {
+    width: 50%;
+    min-width: 325px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ssc_LargeForm {
+    width: 75%;
+    min-width: 325px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ssc_FullForm {
+    width: 98%;
+    min-width: 325px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ssc_FormLabel {
+    color: #e5e5e5;
+    vertical-align: middle;
+}
+
+.ssc_FormInputField {
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    border-radius: 5px;
+    padding-right: 4px;
+}
+
+.ssc_RequiredField {
+    Border-left: 4px solid red;
+}
+
+.ssc_FormButton, .ssc_ImageButton {
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.ssc_ImageButton {
+    text-align: right;
+}

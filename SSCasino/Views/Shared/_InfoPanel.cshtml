@@ -1,0 +1,62 @@
+﻿@{
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _InfoPanel.cshtml
+//      Renders the info panel
+//========================================================================================================================
+}
+
+@using SSCasino; 
+@using SSCasino.Models;
+@model InfoPanel
+
+@{
+    // Entry counter (The first panel entry has slightly different spacing than the rest)
+    int entryCounter = 0;
+    string entryClass = "";
+
+    // Based on the type of panel, grab the appropriate handle image
+    // Assume the standard information panel
+    string handleImagePath = "~/Content/Images/Shared/InfoPanelHandle.png";
+    if (Model.PanelType == SiteHelpers.InfoPanelTypes.SitePanel)
+    {
+        handleImagePath = "~/Content/Images/Home/SitePanelHandle.png";
+    }
+
+    // Information panel
+    <div id="div_InfoPanel" class="ssc_InfoPanel">
+        <div id="div_InfoPanleContent" class="ssc_InfoPanelSlider">
+            @foreach (InfoPanelEntry panelEntry in Model.PanelEntries)
+            {
+                // First panel...
+                //      Bump the entry counter and determine the style for thisd entry
+                //      The first panel entry has slightly different spacing than the rest
+                entryCounter++;
+                entryClass = ((entryCounter == 1) ? "ssc_InfoPanelEntryTitle" : "ssc_InfoPanelEntryTitleSpace");
+                <div class="@entryClass">@panelEntry.EntryTitle</div>
+
+                // Entry lines...
+                <div class="ssc_Table">
+                    <div class="ssc_TableBody">
+                        @foreach (InfoPanelEntryLine entryLine in panelEntry.EntryLines)
+                        {
+                            <div class="ssc_TableRow">
+                                @if (entryLine.EntryLineBody != "")
+                                {
+                                    <div class="ssc_TableCell ssc_InfoPanelEntryLineHeader">@entryLine.EntryLineHeader</div>
+                                    <div class="ssc_TableCell ssc_InfoPanelEntryLineBody">@Html.Raw(entryLine.EntryLineBody)</div>
+                                }
+                                else
+                                {
+                                    <div class="ssc_TableCell ssc_InfoPanelEntryLineHeader">@Html.Raw(@entryLine.EntryLineHeader)</div>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+        <img id="img_InfoPanelHandle" class="ssc_InfoPanelHandle" src="@Url.Content(handleImagePath)" alt="Info Panel Handle" onclick="img_InfoPanelHandle_OnClick();" />
+    </div>
+}

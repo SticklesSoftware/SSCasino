@@ -1,0 +1,40 @@
+﻿@{
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _PageErrors_Content.cshtml
+//      This page renders the content for the page errors dilaog
+//========================================================================================================================
+}
+
+@using SSCasino.Models;
+@model PageErrors
+
+@{
+    // Dialog Header
+    <div class="ssc_DialogHeader">
+        <div class="ssc_Table">
+            <div class="ssc_TableRow">
+                <div class="ssc_TableCell ssc_DialogImage"><img alt="Oops!" src="@Url.Content("~/Content/Images/Dialogs/SadFace.png")" /></div>
+                <div class="ssc_TableCell ssc_DialogMessage">Oops! Something went wrong. See the messages below to try and resolve the issue or contact the site administrator.</div>
+            </div>
+        </div>
+    </div>
+
+    // Runtime errors grid
+    <div class="ssc_DialogBody">@Html.Partial("_PageErrors_ErrorList", Model)</div>
+
+    // Dialog footer
+    <div class="ssc_DialogFooterAndSpace">
+        <div class="ssc_DialogButton">
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "cmdPageErrorClose";
+                settings.Text = "Close";
+                settings.ControlStyle.CssClass = "ssc_FormButton";
+                settings.Width = Unit.Pixel(80);
+                settings.ClientSideEvents.Click = "function(sender, eventArgs) {dlgPageErrors.Hide()}";
+            }).GetHtml()
+        </div>
+    </div>
+}
+

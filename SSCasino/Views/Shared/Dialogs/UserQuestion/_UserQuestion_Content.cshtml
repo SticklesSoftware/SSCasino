@@ -1,0 +1,40 @@
+﻿@{
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _UserQuestion_Content.cshtml
+//      This page renders the content for the user question dialog
+//========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model UserQuestion
+
+@{
+    // Dialog Header
+    <div class="ssc_DialogHeader">
+        <div class="ssc_Table">
+            <div class="ssc_TableRow">
+                <div class="ssc_TableCell ssc_DialogImage"><img alt="User Prompt" src="@Url.Content("~/Content/Images/Dialogs/QuestionMark.png")" /></div>
+                <div class="ssc_TableCell ssc_DialogMessage">@Model.Question</div>
+            </div>
+        </div>
+    </div>
+
+    // Dialog footer
+    <div class="ssc_DialogFooterAndSpace">
+        <div class="ssc_DialogButton">
+            @Html.DevExpress().Button(settings =>
+            {
+                DevExpressHelpers.Render_Button(settings, "cmdQuestionNo", "No", "~/Content/Images/Forms/CancelButton.png", false, Model.NoFunctionName, 80);
+            }).GetHtml()
+        </div>
+        <div class="ssc_DialogButton">
+            @Html.DevExpress().Button(settings =>
+            {
+                DevExpressHelpers.Render_Button(settings, "cmdQuestionYes", "Yes", "~/Content/Images/Forms/OkButton.png", false, Model.YesFunctionName, 80);
+            }).GetHtml()
+        </div>
+    </div>
+}

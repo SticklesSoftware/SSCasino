@@ -1,0 +1,28 @@
+﻿@{
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// _PageErrors_ErrorList.cshtml
+//      This page renders the grid view used to display page errors
+//========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@using DevExpress.Data;
+@model PageErrors
+
+@Html.DevExpress().GridView(
+    settings =>
+    {
+        // General settings
+        settings.KeyFieldName = "ErrorMessage";
+
+        // Make this grid act like a standard read only grid
+        DevExpressHelpers.GridView_StaticData(settings, "grdModelErrors", Unit.Percentage(100), 150);
+
+        // Columns...
+        DevExpressHelpers.GridView_AddColumn(settings, MVCxGridViewColumnType.TextBox, "ErrorMessage", "Error Message", HorizontalAlign.Left, Unit.Percentage(100), "", ColumnSortOrder.Ascending);
+    }
+).Bind(Model.ErrorMessages).GetHtml()
+

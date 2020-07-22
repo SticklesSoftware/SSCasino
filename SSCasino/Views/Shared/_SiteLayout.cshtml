@@ -1,0 +1,73 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _SiteLayout.cshtml
+    //      Layout template for the structure of the site.
+    //========================================================================================================================
+}
+
+@using SSCasino.Models;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Poker Playground">
+    <meta name="author" content="Stickles Software, LLC">
+    <title>SS Casino</title>
+
+    @{
+        //====================================================================================================================
+        // Include DevExpress style sheets
+        //====================================================================================================================
+        Html.DevExpress().GetStyleSheets(
+            new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.CardView },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Chart },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+        );
+
+        //====================================================================================================================
+        // Include casino style sheets
+        //====================================================================================================================
+        <link rel="SHORTCUT ICON" href="@Url.Content("~/Content/Images/Favicon.png")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Styles/Casino.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Styles/Bootstrap/bootstrap-grid.css")" />
+
+        //====================================================================================================================
+        // Include DevExpress scripts
+        //====================================================================================================================
+        Html.DevExpress().GetScripts(
+            new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new Script { ExtensionSuite = ExtensionSuite.CardView },
+            new Script { ExtensionSuite = ExtensionSuite.Editors },
+            new Script { ExtensionSuite = ExtensionSuite.Chart },
+            new Script { ExtensionSuite = ExtensionSuite.GridView }
+        );
+
+        //====================================================================================================================
+        // Include Casino scripts
+        //====================================================================================================================
+        <script src="@Url.Content("~/Scripts/Casino/Casino.js")" type="text/javascript"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Casino/CommonDialogs.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Casino/ErrorHandling.js")"></script>
+
+        //====================================================================================================================
+        // Define a section so individual pages can include page specific css and jscript (not required)
+        //====================================================================================================================
+        @RenderSection("PageIncludes", false)
+    }
+</head>
+
+<body onload="PageLoad()" onunload="PageUnload()" onresize="PageResize()">
+    @Html.Partial("_SiteHeader", new SiteHeader())
+    <div class="ssc_SiteBody">
+        @RenderBody()
+    </div>
+    @Html.Partial("_SiteFooter", new SiteFooter())
+</body>
+</html>

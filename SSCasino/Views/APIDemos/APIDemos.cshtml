@@ -1,0 +1,31 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // AmazonWebServices.cshtml
+    //      Renders the Amazon web services page
+    //========================================================================================================================
+}
+
+@using SSCasino.Models;
+@model APIDemos
+
+@section PageIncludes {
+    <script src="@Url.Content("~/Scripts/Casino/APIDemos.js")" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Styles/ThumbnailsScrollbar.css")" />
+}
+
+
+@{
+    // Info and technology panel
+    @Html.Partial("_InfoPanel", Model.InformationPanel);
+
+    <div class="ssc_APIDemos">
+        @Html.Partial("_APIDemos_YouTubeMenu", Model.YouTubeAPI)
+
+        <div class="ssc_APIDemos_Page">
+            <div class="ssc_APIDemos_PageLeft">@Html.Partial("_APIDemos_ThumbnailsCBP", Model.YouTubeAPI)</div>
+            <div class="ssc_APIDemos_PageRight">@Html.Partial("_APIDemos_VideoPlayerCBP", Model.YouTubeAPI)</div>
+        </div>
+    </div>
+}

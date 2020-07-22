@@ -1,0 +1,24 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // ServerNotRunning.cshtml
+    //      This page renders the server not running pagre.
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model PokerPlayground
+
+@{
+    <div class="ssc_NoServerContainer">
+        <div class="ssc_NoServerBox">
+            <div class="ssc_FloatParent">
+                <div class="ssc_NoServerImage"><img class="ssc_ResponsiveImage" alt="Sad Face" src="@Url.Content("~/Content/Images/ErrorHandling/ErrorHeader.png")" /></div>
+                <div class="ssc_NoServerMessage">@Model.NoServerMessage</div>
+            </div>
+            <div class="ssc_NoServerContact">@Model.SiteContact<a class="ssc_InfoPanelLink" href="mailto:SticklesSoftware@gmail.com" target="_blank">@Model.SiteEmail</a></div>
+        </div>
+    </div>
+}

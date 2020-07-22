@@ -1,0 +1,28 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _CardShuffler_Display.cshtml
+    //      Renders the card display area on the card shuffler page.
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+@model List<PlayingCard>
+
+<div class="ssc_CardShuffler_CardAreaContainer">
+    @{
+        int cardIndex = 0;
+        for (int suitMultiplier = (int)SiteHelpers.CardSuits.Hearts; suitMultiplier <= (int)SiteHelpers.CardSuits.Spades; suitMultiplier++)
+        {
+            <div class="ssc_CardShuffler_CardAreaRow">
+                @for (int suitCount = 1; suitCount <= SiteHelpers.SuitCount; suitCount++)
+                {
+                    <div class="ssc_CardShuffler_CardAreaCell"><img class="ssc_ResponsiveImage ssc_PlayingCard" src="@Url.Content(Model.ElementAt(cardIndex).ImagePath)" /></div>
+                    cardIndex++;
+                }
+            </div>
+        }
+    }
+</div>
