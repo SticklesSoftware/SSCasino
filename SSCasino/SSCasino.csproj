@@ -168,6 +168,8 @@
     <Content Include="Content\Images\SiteHeader\AmazonLink.png" />
     <Content Include="Content\Images\SiteHeader\APIsLink.png" />
     <Content Include="Content\Images\Home\SitePanelHandle.png" />
+    <Content Include="Content\Images\SiteHeader\HomeLink.png" />
+    <Content Include="Content\Images\SiteHeader\JokerLink.png" />
     <Content Include="Content\Images\SiteHeader\MiniMenu.png" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-grid.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-grid.min.css" />

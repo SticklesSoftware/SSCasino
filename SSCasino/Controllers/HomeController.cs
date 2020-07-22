@@ -794,7 +794,7 @@ namespace SSCasino.Controllers
                 YouTubeService youTube = new YouTubeService(
                         new BaseClientService.Initializer()
                         {
-                            ApiKey = "AIzaSyDlkQxVT69ixzi8QieW9ysOqADjF4wBW44",
+                            ApiKey = "na",
                             ApplicationName = this.GetType().ToString()
                         });
 
