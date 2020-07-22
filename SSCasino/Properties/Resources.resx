@@ -145,7 +145,7 @@
     <value>Amazon EC2 Server, MS SQL Server, C#, Razor Pages, Entity Framework, YouTube RESTFul API</value>
   </data>
   <data name="InfoPanel_AboutDevEnv" xml:space="preserve">
-    <value>Microsoft Visual Studio, DevExpress Component Suite, GIT Hub, Hosted via Amazon Web Services</value>
+    <value>Microsoft Visual Studio, DevExpress Component Suite, GIT Hub, Hosted on AWS Elastic Beanstalk</value>
   </data>
   <data name="InfoPanel_AboutFrontendTech" xml:space="preserve">
     <value>HTML, CSS, Javascript, JScript</value>

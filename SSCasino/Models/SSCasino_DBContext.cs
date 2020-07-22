@@ -16,6 +16,9 @@ namespace SSCasino.Models
         //================================================================================================================
         //================================================================================================================
 
+        // Casino
+        public DbSet<CasinoInfo> CasinoInfo { get; set; }
+
         // Cards
         public DbSet<CardPack> CardPacks { get; set; }
         public DbSet<PlayingCard> PlayingCardsView { get; set; }
@@ -39,6 +42,9 @@ namespace SSCasino.Models
         //      modelBuilder: Reference to the database model builder class
         //================================================================================================================
         {
+            // Casino
+            modelBuilder.Entity<CasinoInfo>().HasKey(t => t.CasinoId);
+
             // Cards
             modelBuilder.Entity<CardPack>().HasKey(t => t.CardPackId);
             modelBuilder.Entity<PlayingCard>().HasKey(t => new { t.CardPackId, t.CardNo });
@@ -60,6 +66,9 @@ namespace SSCasino.Models
         //      explicitly. For clarity, all tables define the explicit mapping.
         //================================================================================================================
         {
+            // Casino
+            modelBuilder.Entity<CasinoInfo>().ToTable("CasinoInfo");
+
             // Cards
             modelBuilder.Entity<CardPack>().ToTable("CardPacks");
             modelBuilder.Entity<PlayingCard>().ToTable("PlayingCards_View");

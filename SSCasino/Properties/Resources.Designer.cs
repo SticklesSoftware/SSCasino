@@ -142,7 +142,7 @@ namespace SSCasino.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Microsoft Visual Studio, DevExpress Component Suite, GIT Hub, Hosted via Amazon Web Services.
+        ///   Looks up a localized string similar to Microsoft Visual Studio, DevExpress Component Suite, GIT Hub, Hosted on AWS Elastic Beanstalk.
         /// </summary>
         internal static string InfoPanel_AboutDevEnv {
             get {

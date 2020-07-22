@@ -787,6 +787,7 @@ namespace SSCasino.Controllers
         //================================================================================================================
         {
             bool dataLimitReached = false;
+            string googleAPIKey = RetrieveGoogleAPIKey();
 
             try
             {
@@ -794,7 +795,7 @@ namespace SSCasino.Controllers
                 YouTubeService youTube = new YouTubeService(
                         new BaseClientService.Initializer()
                         {
-                            ApiKey = "na",
+                            ApiKey = googleAPIKey,
                             ApplicationName = this.GetType().ToString()
                         });
 
@@ -816,6 +817,34 @@ namespace SSCasino.Controllers
             }
 
             return dataLimitReached;
+        }
+
+        private string RetrieveGoogleAPIKey()
+        //================================================================================================================
+        // Retrieve the google API key from an external source
+        //
+        // Returns
+        //      Google API key
+        //================================================================================================================
+        {
+            string googleAPIKey = "";
+
+            SSCasino_DBContext dbCasino = null;
+            try
+            {
+                // Connect to the database
+                dbCasino = new SSCasino_DBContext();
+
+                // Retrieve the API key
+                googleAPIKey = dbCasino.CasinoInfo.Where(e => e.CasinoId == 1).Select(e => e.GoogleAPIKey).FirstOrDefault();
+            }
+            finally
+            {
+                if (dbCasino != null)
+                    dbCasino.Dispose();
+            }
+
+            return googleAPIKey;
         }
 
         private void ParseYouTubeSearchResults(YouTubeSearchRequest searchRequest, SearchListResponse searchResults)
