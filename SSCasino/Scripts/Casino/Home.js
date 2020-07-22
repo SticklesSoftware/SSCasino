@@ -24,13 +24,12 @@ function PageLoadTasks()
 {
     // Get the site popup shown cookie
     var sitePopupShown = document.cookie;
-    $('#div_SitePopup').fadeIn();
 
     // If the cookie does not exists, show the popup and create the cookie
-    //if (sitePopupShown == "") {
-    //    document.cookie = "SitePopupShown=1;";
-    //    $('#div_SitePopup').fadeIn();
-    //}
+    if (sitePopupShown == "") {
+        document.cookie = "SitePopupShown=1;";
+        $('#div_SitePopup').fadeIn();
+    }
 }
 
 function cmd_PopupCloseButton_OnClick(sender, eventArgs)

@@ -142,7 +142,7 @@
     <value>An exception occurred. However, a critical error occurred while recording the exception information. no exception information was gathered. Unfortunately, there is no more information at this time.</value>
   </data>
   <data name="InfoPanel_AboutBackendTech" xml:space="preserve">
-    <value>Amazon EC2 Server, MS SQL Server, C#, Razor Pages, YouTube RESTFul API</value>
+    <value>Amazon EC2 Server, MS SQL Server, C#, Razor Pages, Entity Framework, YouTube RESTFul API</value>
   </data>
   <data name="InfoPanel_AboutDevEnv" xml:space="preserve">
     <value>Microsoft Visual Studio, DevExpress Component Suite, GIT Hub, Hosted via Amazon Web Services</value>

@@ -133,7 +133,7 @@ namespace SSCasino.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Amazon EC2 Server, MS SQL Server, C#, Razor Pages, YouTube RESTFul API.
+        ///   Looks up a localized string similar to Amazon EC2 Server, MS SQL Server, C#, Razor Pages, Entity Framework, YouTube RESTFul API.
         /// </summary>
         internal static string InfoPanel_AboutBackendTech {
             get {
