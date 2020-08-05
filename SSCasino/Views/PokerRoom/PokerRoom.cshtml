@@ -16,18 +16,55 @@
     @Html.Partial("_InfoPanel", Model.InformationPanel);
 
     <div class="ssc_PokerRoom">
-        <div class="ssc_PokerRoom_Container">
-            <div class="ssc_PokerRoom_PlayArea">
-                <div class="ssc_PokerRoom_Table">
-                    <div class="ssc_PokerRoom_TableHeader">
-                        <div class="ssc_PokerRoom_TableMessage">Welcome to the poker room.</div>
-                        <div class="ssc_PokerRoom_TableMessage">This page is currently under construction.</div>
+        @*<div class="ssc_PokerRoom_InfoArea">
+            <div class="ssc_PokerRoom_GameInfo">
+                <div>This Level:      1000/2000, 250 ante || 06:34</div>
+                <div>Next Level:      2000/4000, 500 ante</div>
+                <div>Hands Completed: 935</div>
+            </div>
+            <div class="ssc_PokerRoom_GameOptions">
+                <img alt="Poker Room" src="@Url.Content("~/Content/Images/SiteHeader/PokerLink.png")" />
+                <img alt="Poker Room" src="@Url.Content("~/Content/Images/SiteHeader/APIsLink.png")" />
+            </div>
+        </div>*@
+        <div class="ssc_PokerRoom_PlayArea">
+            <div class="ssc_PokerRoom_PlayAreaLeftColumn">
+                <div class="ssc_PokerRoom_TableSeat ssc_PokerRoom_TableSeatLeft">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+                <div class="ssc_PokerRoom_TableSeat ssc_PokerRoom_TableSeatLeft">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+            </div>
+            <div class="ssc_PokerRoom_PlayAreaCenterColumn">
+                <div class="ssc_PokerRoom_PlayAreaTopRow">
+                    <div class="ssc_PokerRoom_TableSeat ssc_PokerRoom_TableSeatTop">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+                    <div class="ssc_PokerRoom_TableSeat ssc_PokerRoom_TableSeatTop">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+                    <div class="ssc_PokerRoom_TableSeat ssc_PokerRoom_TableSeatTop">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+                </div>
+                <div class="ssc_PokerRoom_PlayAreaTableRow">
+                    <div class="ssc_PokerRoom_Table">
+                        <div class="ssc_PokerRoom_TablePot">This page is currently under construction...</div>
+                        <div class="ssc_PokerRoom_TableCards">
+                            <img class="ssc_ResponsiveImage ssc_PokerRoom_TableCard ssc_PlayingCard" alt="Poker Room" src="@Url.Content("~/Content/Images/CardDecks/LargeFourColor/LargeFourColor_10H.png")" />
+                            <img class="ssc_ResponsiveImage ssc_PokerRoom_TableCard ssc_PlayingCard" alt="Poker Room" src="@Url.Content("~/Content/Images/CardDecks/LargeFourColor/LargeFourColor_JH.png")" />
+                            <img class="ssc_ResponsiveImage ssc_PokerRoom_TableCard ssc_PlayingCard" alt="Poker Room" src="@Url.Content("~/Content/Images/CardDecks/LargeFourColor/LargeFourColor_KH.png")" />
+                            <img class="ssc_ResponsiveImage ssc_PokerRoom_TableCard ssc_PlayingCard" alt="Poker Room" src="@Url.Content("~/Content/Images/CardDecks/LargeFourColor/LargeFourColor_QH.png")" />
+                            <img class="ssc_ResponsiveImage ssc_PokerRoom_TableCard ssc_PlayingCard" alt="Poker Room" src="@Url.Content("~/Content/Images/CardDecks/LargeFourColor/LargeFourColor_AH.png")" />
+                        </div>
+                        <div class="ssc_PokerRoom_TableName">Poker Playground</div>
                     </div>
                 </div>
-                <div class="ssc_PokerRoom_ActionsArea">Player Actions Area</div>
+                <div class="ssc_PokerRoom_PlayAreaBottomRow">
+                    <div class="ssc_PokerRoom_TableSeat">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+                    <div class="ssc_PokerRoom_TableSeat">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+                    <div class="ssc_PokerRoom_TableSeat">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+                </div>
             </div>
-            <div class="ssc_PokerRoom_OptionsArea">Player Options</div>
+            <div class="ssc_PokerRoom_PlayAreaRightColumn">
+                <div class="ssc_PokerRoom_TableSeat ssc_PokerRoom_TableSeatRight">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+                <div class="ssc_PokerRoom_TableSeat ssc_PokerRoom_TableSeatRight">@Html.Partial("_PokerRoom_PlayerPanel")</div>
+            </div>
         </div>
+        @*<div class="ssc_PokerRoom_PlayerArea">
+            <div class="ssc_PokerRoom_PlayerChat">CHAT</div>
+            <div class="ssc_PokerRoom_PlayerActions">ACTIONS</div>
+        </div>*@
     </div>
-
 }

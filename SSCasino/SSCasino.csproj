@@ -149,6 +149,58 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\CardDecks\Standard\Standard_2C.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_2D.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_2H.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_2S.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_3C.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_3D.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_3H.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_3S.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_4C.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_4D.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_4H.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_4S.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_5C.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_5D.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_5H.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_5S.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_6C.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_6D.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_6H.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_6S.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_7C.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_7D.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_7H.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_7S.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_8C.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_8D.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_8H.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_8S.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_9C.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_9D.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_9H.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_9S.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_AC.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_AD.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_AH.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_AS.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_JC.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_JD.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_JH.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_JS.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_KC.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_KD.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_KH.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_KS.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_QC.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_QD.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_QH.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_QS.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_TC.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_TD.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_TH.png" />
+    <Content Include="Content\Images\CardDecks\Standard\Standard_TS.png" />
     <Content Include="Content\Images\Dialogs\Info.png" />
     <Content Include="Content\Images\Dialogs\QuestionMark.png" />
     <Content Include="Content\Images\Dialogs\SadFace.png" />
@@ -164,6 +216,51 @@
     <Content Include="Content\Images\Home\ShufflePlate.png" />
     <Content Include="Content\Images\Home\SpadeLogoSmall.png" />
     <Content Include="Content\Images\ErrorHandling\ErrorHeader.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_1.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_10.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_11.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_12.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_13.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_14.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_15.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_16.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_17.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_18.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_19.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_2.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_20.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_21.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_22.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_23.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_24.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_25.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_26.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_27.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_28.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_29.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_3.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_30.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_31.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_32.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_33.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_34.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_35.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_36.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_37.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_38.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_39.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_4.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_40.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_41.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_42.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_43.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_44.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_45.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_5.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_6.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_7.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_8.png" />
+    <Content Include="Content\Images\PokerRoom\PlayerIcons\Faces\FaceIcon_9.png" />
     <Content Include="Content\Images\Shared\InfoPanelHandle.png" />
     <Content Include="Content\Images\SiteHeader\AmazonLink.png" />
     <Content Include="Content\Images\SiteHeader\APIsLink.png" />
@@ -495,6 +592,7 @@
     <Content Include="Views\Shared\ServerNotRunning.cshtml" />
     <Content Include="Views\Shared\MiniMenu\_MiniMenu_Popup.cshtml" />
     <Content Include="Views\Shared\MiniMenu\_MiniMenu_Items.cshtml" />
+    <Content Include="Views\PokerRoom\_PokerRoom_PlayerPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -557,7 +655,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\CardDecks\Standard\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

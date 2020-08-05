@@ -1,0 +1,35 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _PokerRoom_PlayerPanel.cshtml
+    //      Renders a poker player's control panel
+    //========================================================================================================================
+}
+
+@using SSCasino;
+@using SSCasino.Models;
+
+@{
+    <div style="display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: space-between;">
+        <div style="display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: center; align-items: center;">
+            <div style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly;">
+                <img class="ssc_ResponsiveImage ssc_PlayingCard" style="flex-grow: 1; flex-shrink: 1; max-width: 4vw; margin-right: .5vw;" alt="Hole Card 1" src="@Url.Content("~/Content/Images/CardDecks/LargeFourColor/LargeFourColor_AD.png")" />
+                <img class="ssc_ResponsiveImage ssc_PlayingCard" style="flex-grow: 1; flex-shrink: 1; max-width: 4vw; margin-left: .5vw;" alt="Hole Card 2" src="@Url.Content("~/Content/Images/CardDecks/LargeFourColor/LargeFourColor_10C.png")" />
+            </div>
+            <div style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center; padding: 4px 6px; border-radius: .5vw; background-color: #ffffff; border: 1px solid #1a1a1a; box-shadow: 8px 8px 6px -6px #1a1a1a; overflow: hidden; min-width: 15vw;">
+                <img class="ssc_ResponsiveImage" style="flex-grow: 0; flex-shrink: 0; max-width: 1.5vw;" alt="Player Icon" src="@Url.Content("~/Content/Images/PokerRoom/PlayerIcons/Faces/FaceIcon_1.png")" />
+                <div style="flex-grow: 1; flex-shrink: 1; white-space: nowrap; font-family: 'Footlight MT'; font-size: 2.5vh; font-weight: bold; color: #1a1a1a; text-align: left; padding-left: .5vw;">Rick</div>
+                <div style="flex-grow: 0; flex-shrink: 0; white-space: nowrap; font-family: 'Arial'; font-size: 1.75vh; padding: .33vh .45vw; background-color: #007f01; border-radius: 2vw; color: #e5e5e5; margin: 0px .33vw;">9</div>
+                <div style="flex-grow: 0; flex-shrink: 0; white-space: nowrap; font-family: 'Arial'; font-size: 1.75vh; padding: .33vh .45vw; background-color: #666666; border-radius: 2vw; color: #e5e5e5;">2</div>
+            </div>
+            <div style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center; padding: 4px 6px; border-radius: .5vw; background-color: #ffc267; overflow: hidden; min-width: 12vw; box-shadow: 8px 8px 6px -6px #1a1a1a;">
+                <div style="flex-grow: 1; flex-shrink: 1; white-space: nowrap; font-family: 'Arial'; font-size: 2vh; color: #1a1a1a; text-align: center;">All-In</div>
+                <div style="flex-grow: 2; flex-shrink: 2; white-space: nowrap; font-family: 'Arial'; font-size: 2vh; color: #1a1a1a; border-left: 1px solid #1a1a1a; text-align: right;">$9,999,999</div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: center; background-color: #4d4d4d; min-height: 1vh; position: relative; top: 2vh;">
+            <div style="min-height: .75vh; max-width: 75%; background-color: #ffcc00;"></div>
+        </div>
+    </div>
+}
