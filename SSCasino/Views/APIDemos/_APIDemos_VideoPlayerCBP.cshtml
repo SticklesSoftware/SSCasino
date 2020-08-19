@@ -14,8 +14,15 @@
 @Html.DevExpress().CallbackPanel(
     settings =>
     {
-        // Assign general and shared properties
-        DevExpressHelpers.Render_CallbackPanel(settings, "cbp_VideoPlayer", "Home", "APIDemos_LoadNewVideo", "", true, true);
+        // General Settings
+        settings.Name = "cbp_VideoPlayer";
+
+        // Server side callbacks
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "APIDemos_LoadNewVideo" };
+
+        // Client side events
+        settings.ClientSideEvents.BeginCallback = "cbp_VideoPlayer_BeginCallback";
+        settings.ClientSideEvents.EndCallback = "cbp_VideoPlayer_EndCallback";
 
         // Content
         settings.SetContent(() =>

@@ -272,16 +272,36 @@ function cmd_ShuffleButton_OnClick(sender, eventArgs)
 
 function cmd_ResetButton_OnClick(sender, eventArgs)
 //========================================================================================================================
-// Handle click events for the shuffle button
+// Handle click events for the reset button
 //
 // Parameters
 //      sender:    Reference to the control that raised the event
 //      eventArgs: Data associated with the event
 //========================================================================================================================
 {
-    // Reset the shuffler control panel
-    m_CallbackAction = ACT_RESET;
-    cbp_ShufflerControlPanel.PerformCallback();
+    // Reset the number of shuffles and insure the warning is closed
+    txt_ShuffleCount.SetText($("#hdnMinShuffles").val());
+    $("#div_ShuffleWarning").hide();
+
+    // Reset the shuffle options
+    if (parseInt($("#hdnShufflerMode").val()) == 1) {
+        // Set fisher-yates as the default
+        chk_FisherYates.SetChecked(true);
+        chk_Naive.SetChecked(false);
+    }
+    else {
+        // Set the four card sample as the default
+        // Refresh the results graph
+        chk_FourCardSample.SetChecked(true);
+        chk_SixCardSample.SetChecked(false);
+        RefreshResultsGraph(ACT_RESET);
+    }
+
+    // Select the default card pack
+    // Refresh the card example area of the shuffler control panel
+    cbo_ShufflerCardPacks.SetSelectedIndex(0);
+    m_CallbackAction = ACT_CHANGE_CARD_PACK;
+    cbp_ShufflerCardExamples.PerformCallback();
 }
 
 function GetShuffleType()

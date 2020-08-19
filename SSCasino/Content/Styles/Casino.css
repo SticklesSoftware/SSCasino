@@ -14,18 +14,17 @@
 */
 
 body {
-    background-color: #333333;
+    margin: 0px;
+    padding: 0px;
     font-family: Footlight MT, Arial;
     font-size: 14pt;
     color: #e5e5e5;
-    margin: 0px;
-    padding: 0px;
 }
 
-.ssc_SiteBody {
-    padding-top: 120px;
+.ssc_DefaultBodyBackground {
+    background: rgb(102,89,41);
+    background: radial-gradient(circle, rgba(102,89,41,1) 0%, rgba(47,45,39,1) 100%);
 }
-
 
 /*
 //========================================================================================================================
@@ -34,13 +33,11 @@ body {
 */
 
 .ssc_SiteHeader {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 120px;
-    overflow: hidden;
-    z-index: 999;
-    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: .75vh 0vw;
     border-bottom: solid 1px #aa964d;
     background-color: #000000;
     background-image: url("/Content/Images/SiteHeader/SuitHeadrer.png");
@@ -48,41 +45,70 @@ body {
     background-repeat: repeat-x;
 }
 
-.ssc_SiteLogo {
-    float: left;
-    padding: 20px;
-    width: 120px;
+.ssc_SiteHeader_Left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.ssc_SiteName {
-    float: left;
-    font-size: 28pt;
+.ssc_SiteHeader_SiteLogo {
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 6.5vw;
+    padding: 0vh 1vw;
+}
+
+.ssc_SiteHeader_SiteName {
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: calc(8pt + 2.5vh);
     color: #aa964d;
-    white-space: nowrap;
-    line-height: 120px;
 }
 
-/*
-//--------------------------------------------------
-// Standard Menu
-//--------------------------------------------------
-*/
-
-.ssc_SiteLink {
-    float: right;
-    padding: 8px 18px;
+.ssc_SiteHeader_Right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.ssc_HeaderLink:hover {
+.ssc_SiteHeader_Action {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0vh 1vw;
+}
+
+.ssc_SiteHeader_Link:hover {
     filter: brightness(125%);
     position: relative;
     top: -5px;
 }
 
-/* Swap the standard and mini menus at a specific screen or browser window size */
-@media screen and (max-width: 1070px) {
+.ssc_SiteHeader_LinkImage {
+    max-width: 6vw;
+}
+
+.ssc_SiteHeader_LinkText {
+    font-size: calc(4pt + 2vh);
+    color: #aa964d;
+    white-space: nowrap;
+}
+
+/*
+//--------------------------------------------------
+// Swap the standard and mini menus at a specific 
+// screen or browser window size
+//--------------------------------------------------
+*/
+@media screen and (max-width: 800px) {
     #div_MiniMenuContainer {
-        display: inline-block;
+        display: block;
     }
 
     #div_StandardMenuContainer {
@@ -95,10 +121,6 @@ body {
 // Mini Menu
 //--------------------------------------------------
 */
-
-.ssc_MiniMenuImage {
-    margin-top: 20px;
-}
 
 .ssc_MiniMenu {
     border: 1px solid #aa964d;
@@ -125,20 +147,21 @@ body {
 // Site Popup
 //========================================================================================================================
 */
-    .ssc_SitePopup {
-        display: none;
-        width: 60vw;
-        position: absolute;
-        top: calc(10vh + 120px);
-        left: calc((100vw - 60vw) / 2);
-        z-index: 800;
-        margin: 20px auto;
-        padding: 20px 30px;
-        background-color: #333333;
-        border: 2px solid #aa964d;
-        border-radius: 16px;
-        box-shadow: 8px 16px 30px -8px #1a1a1a;
-    }
+
+.ssc_SitePopup {
+    display: none;
+    width: 60vw;
+    position: absolute;
+    top: calc(10vh + 120px);
+    left: calc((100vw - 60vw) / 2);
+    z-index: 800;
+    margin: 20px auto;
+    padding: 20px 30px;
+    background-color: #333333;
+    border: 2px solid #aa964d;
+    border-radius: 16px;
+    box-shadow: 8px 16px 30px -8px #1a1a1a;
+}
 
 .ssc_SitePopup_Logo {
     float: left;
@@ -241,214 +264,45 @@ body {
 
 /*
 //========================================================================================================================
-// Home Page
-//========================================================================================================================
-*/
-
-.ssc_HomeContainer {
-    min-height: calc(100vh - 120px);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    background: rgb(102,89,41);
-    background: radial-gradient(circle, rgba(102,89,41,1) 0%, rgba(47,45,39,1) 100%);
-}
-
-.ssc_HomeColumn {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.ssc_HomeTitle {
-    font-size: 4vh;
-    color: #aa964d;
-    text-align: center;
-    padding-bottom: 12px;
-}
-
-.ssc_AreaLink {
-    filter: opacity(25%);
-}
-
-.ssc_AreaLink:hover {
-    animation: brighten .5s steps(10, end);
-    filter: opacity(100%);
-}
-
-@keyframes brighten {
-    0% {
-        filter: opacity(25%);
-    }
-    100% {
-        filter: opacity(100%);
-    }
-}
-
-
-/*
-//========================================================================================================================
-// Shuffler Control Panel
-//========================================================================================================================
-*/
-.ssc_ShufflerPanel {
-    width: 18%;
-    max-width: 18%;
-    min-width: 230px;
-    background-color: #666666;
-    border-left: 2px solid #aa964d;
-    min-height: calc(100vh - 120px);
-    padding: 12px;
-    text-align: center;
-}
-
-.ssc_ShufflerPanelContent {
-    width: 90%;
-    text-align: center;
-    margin: 0px auto;
-}
-
-.ssc_PanelSection {
-    margin-top: 30px;
-    border-top: 1px solid #e5e5e5;
-}
-
-.ssc_PanelWarning {
-    display: none;
-    border: 1px solid #fffe80;
-    padding: 4px 8px;
-    margin-top: 4px;
-    font-family: Arial;
-    font-size: 11pt;
-    color: #fffe80;
-}
-
-.ssc_PanelLabel, .ssc_PanelLabelNoSpace {
-    font-family: Footlight MT, Arial;
-    font-size: 14pt;
-    margin-bottom: 4px;
-    text-align: left;
-}
-
-.ssc_PanelLabel {
-    margin-top: 12px;
-}
-
-.ssc_PanelCardExamplesArea {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 12px;
-}
-
-.ssc_PanelCardExample {
-    width: 80px;
-}
-
-.ssc_PanelCombobox {
-    border-left: 10px solid #aa964d;
-    border-top: 1px solid #aa964d;
-    border-right: 1px solid #aa964d;
-    border-bottom: 1px solid #aa964d;
-    font-family: Footlight MT, Arial;
-    font-size: 14pt;
-    color: #1a1a1a;
-}
-
-.ssc_PanelCheckbox {
-    height: 30px;
-    font-family: Footlight MT, Arial;
-    font-size: 14pt;
-    color: #e5e5e5;
-}
-
-.ssc_PanelTextbox {
-    border-left: 10px solid #aa964d;
-    border-top: 1px solid #aa964d;
-    border-right: 1px solid #aa964d;
-    border-bottom: 1px solid #aa964d;
-    text-align: right;
-    font-family: Footlight MT, Arial;
-    font-size: 14pt;
-    color: #1a1a1a;
-}
-
-.ssc_ShuffleButton {
-    width: 180px;
-    height: 50px;
-    display: inline-block;
-    margin-top: 20px;
-    background-image: url("/Content/Images/Shared/ShuffleButtonUp.png");
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.ssc_ShuffleButton:active {
-    background-image: url("/Content/Images/Shared/ShuffleButtonDown.png");
-}
-
-.ssc_ResetButton {
-    width: 180px;
-    height: 50px;
-    display: inline-block;
-    margin-top: 12px;
-    background-image: url("/Content/Images/Shared/ResetButtonUp.png");
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.ssc_ResetButton:active {
-    background-image: url("/Content/Images/Shared/ResetButtonDown.png");
-}
-
-
-/*
-//========================================================================================================================
-// Information Panel
+// Information & Technology Panel
 //========================================================================================================================
 */
 
 .ssc_InfoPanel {
-    position: fixed;
-    top: 120px;
     width: 100%;
-    z-index: 900;
 }
 
 .ssc_InfoPanelSlider {
     display: none;
-    padding: 8px 12px 12px 12px;
+    padding: 1vh 1vw;
     background-color: #333333;
     border-bottom: 1px solid #aa964d;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .ssc_InfoPanelEntryTitle, .ssc_InfoPanelEntryTitleSpace {
-    font-size: 13pt;
+    font-size: calc(6pt + 1vh);
     color: #aa964d;
     text-decoration: underline;
-    padding-bottom: 8px;
+    padding-bottom: 1vh;
 }
 
 .ssc_InfoPanelEntryTitle {
-    padding-top: 8px;
+    padding-top: 1vh;
 }
 
 .ssc_InfoPanelEntryTitleSpace {
-    padding-top: 16px;
+    padding-top: 2vh;
 }
 
 .ssc_InfoPanelEntryLineHeader, .ssc_InfoPanelEntryLineBody {
-    font-size: 13pt;
-    padding-bottom: 8px;
+    font-size: calc(6pt + 1vh);
+    padding-bottom: 1vh;
 }
 
 .ssc_InfoPanelEntryLineHeader {
     width: 1px;
-    padding-right: 12px;
+    padding-right: 1.5vw;
     color: #e5e5e5;
 }
 
@@ -457,7 +311,7 @@ body {
 }
 
 .ssc_InfoPanelEntrySpace {
-    padding-top: 8px;
+    padding-top: 1vh;
 }
 
 .ssc_InfoPanelLink, .ssc_InfoPanelLink:active, .ssc_InfoPanelLink:visited {
@@ -471,308 +325,11 @@ body {
 }
 
 .ssc_InfoPanelHandle {
-    padding-left: 12px;
+    max-width: 12vw;
+    min-width: 10vw;
+    padding-left: 2vw;
     cursor: pointer;
 }
-
-/*
-//========================================================================================================================
-// Shared styles for card shuffler pages
-//========================================================================================================================
-*/
-
-.ssc_PlayingCard {
-    box-shadow: 8px 8px 6px -6px #1a1a1a;
-    min-width: 25px;
-}
-
-.ssc_SampleCard {
-    max-width: 100px;
-}
-
-.ssc_ShuffleTitle {
-    font-family: Footlight MT, Arial;
-    font-size: 18pt;
-    color: #e5e5e5;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.ssc_CardAreaBox {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-}
-
-.ssc_CardArea {
-    width: 82%;
-    background: #204e22;
-    background: radial-gradient(circle, rgba(39,173,104,1) 0%, rgba(32,78,34,1) 100%);
-}
-
-
-/*
-//========================================================================================================================
-// Card shuffler page
-//========================================================================================================================
-*/
-
-.ssc_CardShuffler_CardAreaSpace {
-    padding-top: 30px;
-}
-
-.ssc_CardShuffler_CardAreaContainer {
-    border: 2px solid #e5e5e5;
-    margin: 20px;
-    padding: 6px;
-    border-radius: 10px;
-}
-
-.ssc_CardShuffler_CardAreaRow {
-    overflow: hidden;
-}
-
-.ssc_CardShuffler_CardAreaCell {
-    width: calc((100% / 13) - 14px);
-    margin: 7px;
-    float: left;
-    text-align: center;
-}
-
-
-/*
-//========================================================================================================================
-// Randomness page
-//========================================================================================================================
-*/
-.ssc_CardSamples {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.ssc_CardSamplesLeft, .ssc_CardSamplesRight {
-    width: 50%;
-    padding: 20px;
-    margin: 20px auto;
-}
-
-.ssc_CardSamplesLeft {
-    border-right: 1px solid #aa964d;
-}
-
-.ssc_CardSamplesRight {
-    border-left: 1px solid #aa964d;
-}
-
-.ssc_CardSamplesDisplay {
-    overflow: hidden;
-    padding: 20px;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #e5e5e5;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.ssc_CardSamplesDisplay4Slot, .ssc_CardSamplesDisplay6Slot {
-    float: left;
-}
-
-.ssc_CardSamplesDisplay4Slot {
-    width: calc(100% / 4);
-}
-
-.ssc_CardSamplesDisplay6Slot {
-    width: calc(100% / 6);
-}
-
-.ssc_ShuffleResults {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    margin: 0px 20px;
-}
-
-.ssc_ShuffleResultsTitle {
-    margin-bottom: 12px;
-}
-
-
-/*
-//========================================================================================================================
-// API Demos
-//========================================================================================================================
-*/
-
-/*
-//--------------------------------------------------
-// Page Structure
-//--------------------------------------------------
-*/
-.ssc_APIDemos {
-    min-height: calc(100vh - 120px);
-    padding: 30px;
-    color: #e5e5e5;
-    text-align: center;
-    background: rgb(158,31,31);
-    background: radial-gradient(circle, rgba(158,31,31,1) 0%, rgba(108,0,0,1) 100%);
-}
-
-.ssc_APIDemos_PageHeader {
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ssc_APIDemos_PageHeaderLeft {
-    font-size: 28pt;
-}
-
-.ssc_APIDemos_PageHeaderRight {
-    flex-basis: 80%;
-}
-
-.ssc_APIDemos_Page {
-    display: flex;
-    flex-direction: row;
-    flex-flow: nowrap;
-    justify-content: space-evenly;
-    padding-top: 50px;
-}
-
-.ssc_APIDemos_PageLeft {
-    flex-basis: 40%;
-}
-
-.ssc_APIDemos_PageRight {
-    flex-basis: 50%;
-}
-
-/*
-//--------------------------------------------------
-// Video Menu
-//--------------------------------------------------
-*/
-.ssc_APIDemos_VideoMenuTitle {
-    font-size: 28pt;
-    color: #aa964d;
-    flex-basis: 20%;
-}
-
-.ssc_APIDemos_CategoriesContainer {
-    display: flex;
-    flex-direction: column;
-    flex-flow: wrap;
-    justify-content: space-around;
-    border-bottom: 1px solid #aa964d;
-}
-
-.ssc_APIDemos_CategoryTitle {
-    font-size: 24pt;
-    color: #aa964d;
-    text-align: center;
-    border-bottom: 1px solid #aa964d;
-    flex-basis: 100%;
-    padding-bottom: 12px;
-}
-
-.ssc_APIDemos_CategoryItem {
-    font-size: 18pt;
-    color: #e5e5e5;
-    padding: 10px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.ssc_APIDemos_CategoryItem:hover {
-    text-decoration: underline;
-}
-
-/*
-//--------------------------------------------------
-// Video Player
-//--------------------------------------------------
-*/
-
-.ssc_APIDemos_VideoPlayer {
-    border: 2PX solid #aa964d;
-}
-
-/*
-//--------------------------------------------------
-// Thumbnails
-//--------------------------------------------------
-*/
-
-.ssc_APIDemos_ThumbnailsHeader {
-    font-size: 18pt;
-    font-family: 'Footlight MT';
-    color: #e5e5e5;
-    width: 90%;
-    margin: 0px auto;
-    border-bottom: 3px double #aa964d;
-}
-
-.ssc_APIDemos_ThumbnailsContainer {
-    max-height: 50vh;
-    overflow-y: scroll;
-    text-align: left;
-    margin-top: 20px;
-    background-color: #333333;
-    border: 1px solid #aa964d;
-    padding: 12px;
-}
-
-.ssc_APIDemos_ThumbnailRow {
-    display: flex;
-    flex-direction: column;
-    flex-flow: nowrap;
-    justify-content: space-around;
-    color: #1a1a1a;
-    padding: 8px;
-    border-bottom: 1px solid #666666;
-    margin-bottom: 16px;
-    cursor: pointer;
-}
-
-.ssc_APIDemos_ThumbnailRowSelected {
-    background-color: rgba(170, 150, 78, 0.5);
-}
-
-.ssc_APIDemos_ThumbnailRow:hover {
-    background-color: rgba(170, 150, 78, 0.5);
-}
-
-.ssc_APIDemos_ThumbnailCol {
-    padding-right: 20px;
-    padding-bottom: 6px;
-}
-
-.ssc_APIDemos_ThumbnailInfoCol {
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: space-around;
-}
-
-.ssc_APIDemos_ThumbnailTitle {
-    flex-basis: 100%;
-    text-align: center;
-    font-weight: bold;
-    padding-bottom: 12px;
-    color: #aa964d;
-}
-
-.ssc_APIDemos_ThumbnailDesc {
-    color: #e5e5e5;
-}
-
 
 /*
 //========================================================================================================================
@@ -785,6 +342,7 @@ body {
 // Page Structure
 //--------------------------------------------------
 */
+
 .ssc_PokerRoom {
     display: flex;
     flex-direction: column;
@@ -994,6 +552,13 @@ body {
     align-items: flex-start;
 }
 
+.ssc_PlayingCard {
+    box-shadow: 8px 8px 6px -6px #333333;
+    min-width: 25px;
+}
+
+
+
 /*
 //========================================================================================================================
 // Common Styles
@@ -1057,6 +622,10 @@ body {
 
 .ssc_TextBold {
     font-weight: bold;
+}
+
+.ssc_TextUnderline {
+    text-decoration: underline;
 }
 
 .ssc_TextSuccess {

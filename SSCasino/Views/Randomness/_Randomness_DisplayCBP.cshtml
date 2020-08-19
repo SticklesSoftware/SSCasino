@@ -14,8 +14,15 @@
 @Html.DevExpress().CallbackPanel(
     settings =>
     {
-        // Assign general and shared properties
-        DevExpressHelpers.Render_CallbackPanel(settings, "cbp_RandomnessCardDisplay", "Home", "Randomness_PerformAction", "", true, true);
+        // General Settings
+        settings.Name = "cbp_RandomnessCardDisplay";
+
+        // Server side callbacks
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "Randomness_PerformAction" };
+
+        // Client side events
+        settings.ClientSideEvents.BeginCallback = "cbp_RandomnessCardDisplay_BeginCallback";
+        settings.ClientSideEvents.EndCallback = "cbp_RandomnessCardDisplay_EndCallback";
 
         // Content
         settings.SetContent(() =>

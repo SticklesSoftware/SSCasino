@@ -15,6 +15,16 @@
 // FUNCTIONS
 //========================================================================================================================
 
+function PageLoadTasks()
+//========================================================================================================================
+// Perform page load tasks
+//========================================================================================================================
+{
+    // Change the website background to the green circular gradient
+    siteBody = $(document.body);
+    siteBody.addClass("ssc_GreenBodyBackground");
+}
+
 function cbp_CardShufflerDisplay_BeginCallback(sender, eventArgs)
 //========================================================================================================================
 // Handle pre-callback processing for the card shuffler card display area

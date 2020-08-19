@@ -1,0 +1,207 @@
+﻿/*
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// APIDemos.css
+//      Styles specific to the API demos page
+//========================================================================================================================
+*/
+
+.ssc_RedBodyBackground {
+    background: rgb(158,31,31);
+    background: radial-gradient(circle, rgba(158,31,31,1) 0%, rgba(108,0,0,1) 100%);
+}
+
+.ssc_APIDemos_Page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+/*
+//--------------------------------------------------
+// Video Menu
+//--------------------------------------------------
+*/
+
+.ssc_APIDemos_VideoMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0vh 1vw;
+}
+
+.ssc_APIDemos_VideoMenuTitle {
+    font-size: calc(8pt + 3vh);
+    color: #aa964d;
+}
+
+.ssc_APIDemos_VideoMenuCategories {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ssc_APIDemos_CategoryTitle {
+    padding-bottom: .5vh;
+    font-size: calc(6pt + 2.5vh);
+    color: #aa964d;
+}
+
+.ssc_APIDemos_CategoryContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1vh 0vw;
+    border-top: 1px solid #aa964d;
+    border-bottom: 1px solid #aa964d;
+}
+
+.ssc_APIDemos_CategoryItem {
+    padding: 0vh 3vw;
+    font-size: calc(6pt + 1.75vh);
+    color: #e5e5e5;
+    cursor: pointer;
+}
+
+.ssc_APIDemos_CategoryItem:hover {
+    text-decoration: underline;
+}
+
+
+/*
+//--------------------------------------------------
+// Video Display
+//--------------------------------------------------
+*/
+
+.ssc_APIDemos_VideoDisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 4vh 2vw 1vh 2vw;
+}
+
+.ssc_APIDemos_VideoDisplayLeft {
+    flex-basis: 45%;
+    padding-right: 1vw;
+}
+
+.ssc_APIDemos_VideoDisplayRight {
+    flex-basis: 55%;
+    margin-top: 5vh;
+    padding-left: 1vw;
+}
+
+/*
+//----------------------------------------------------------------------------------------------------
+// At 1024px screen or browser width OR 768px screen or browser height
+//      Switch to column layout for the card area and shufler control panel
+//      Change the shufler control panel layout direction to row
+//      Shorten the vertical padding within the shuffle sections
+//----------------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width: 1024px) {
+    .ssc_APIDemos_VideoDisplayLeft {
+        flex-basis: 100%;
+    }
+
+    .ssc_APIDemos_VideoDisplayRight {
+        flex-basis: 100%;
+    }
+}
+
+
+/*
+//--------------------------------------------------
+// Video Player
+//--------------------------------------------------
+*/
+
+.ssc_APIDemos_VideoPlayer {
+    border: 1PX solid #aa964d;
+}
+
+
+/*
+//--------------------------------------------------
+// Thumbnails
+//--------------------------------------------------
+*/
+
+.ssc_APIDemos_Thumbnails {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ssc_APIDemos_ThumbnailsHeader {
+    font-family: "Footlight MT";
+    font-size: calc(6pt + 1.75vh);
+    color: #e5e5e5;
+    border-bottom: 3px double #aa964d;
+}
+
+.ssc_APIDemos_ThumbnailsContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    max-height: 60vh;
+    overflow-y: scroll;
+    padding: 1vh 1vw;
+    margin-top: 2vh;
+    background-color: #333333;
+    border: 1px solid #aa964d;
+}
+
+.ssc_APIDemos_ThumbnailRow {
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    justify-content: flex-start;
+    margin-bottom: 2vh;
+    padding: 1vh .5vw;
+    border-bottom: 1px solid #666666;
+    cursor: pointer;
+}
+
+.ssc_APIDemos_ThumbnailRowSelected {
+    background-color: rgba(170, 150, 78, 0.5);
+}
+
+.ssc_APIDemos_ThumbnailRow:hover {
+    background-color: rgba(170, 150, 78, 0.5);
+}
+
+.ssc_APIDemos_ThumbnailImage {
+    padding-right: 1vw;
+}
+
+.ssc_APIDemos_ThumbnailInfoCol {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.ssc_APIDemos_ThumbnailTitle {
+    flex-basis: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #aa964d;
+}
+
+.ssc_APIDemos_ThumbnailDesc {
+    color: #e5e5e5;
+}

@@ -11,14 +11,12 @@
 @using SSCasino.Models;
 @model List<PlayingCard>
 
-<div class="ssc_CardSamplesDisplay">
-    @{
-        int sampleSize = Model.Count;
-        string slotClass = ((sampleSize == 4) ? "ssc_CardSamplesDisplay4Slot" : "ssc_CardSamplesDisplay6Slot");
+@{
+    int sampleSize = Model.Count;
+    string slotClass = ((sampleSize == 4) ? "ssc_Randomness_SampleCards_4Slot" : "ssc_Randomness_SampleCards_6Slot");
 
-        for (int cardIndex = 0; cardIndex <= (sampleSize - 1); cardIndex++)
-        {
-            <div class="@slotClass"><img class="ssc_ResponsiveImage ssc_PlayingCard ssc_SampleCard" src="@Url.Content(Model.ElementAt(cardIndex).ImagePath)" /></div>
-        }
+    for (int cardIndex = 0; cardIndex <= (sampleSize - 1); cardIndex++)
+    {
+        <div class="@slotClass"><img class="ssc_CardShuffler_Card ssc_ResponsiveImage" src="@Url.Content(Model.ElementAt(cardIndex).ImagePath)" /></div>
     }
-</div>
+}

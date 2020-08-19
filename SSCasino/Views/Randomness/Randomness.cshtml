@@ -11,19 +11,23 @@
 @model Randomness
 
 @section PageIncludes {
-    <script src="@Url.Content("~/Scripts/Casino/Randomness.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Casino/Shuffle.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Casino/Randomness.js")" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Styles/CardShufflers.css")" />
 }
 
-@{
-    // Info and technology panel
-    @Html.Partial("_InfoPanel", Model.InformationPanel);
+<!-- Shared card shuffler page -->
+<div class="ssc_CardShufflerPage">
+    <!-- Information and technology panel-->
+    @Html.Partial("_InfoPanel", Model.InformationPanel)
 
-    // The randomness comparison page is split into two areas...
-    //      The left side displays the cards
-    //      The right side displays the shuffler control panel
-    <div class="ssc_CardAreaBox">
-        <div id="div_CardArea" class="ssc_CardArea">@Html.Partial("_Randomness_DisplayCBP", Model)</div>
-        <div class="ssc_ShufflerPanel">@Html.Partial("_Shuffler_ControlPanelCBP", Model.ControlPanel)</div>
+    <!--
+        Shared card shuffler container
+            Card samples & results graph (left)
+            Shuffler control panel (right)
+    -->
+    <div class="ssc_CardShufflerContainer">
+        <div id="div_RandomnessContainer" class="ssc_Randomness_Area">@Html.Partial("_Randomness_Container", Model)</div>
+        <div class="ssc_ShufflerCP_Panel">@Html.Partial("_Shuffler_ControlPanel", Model.ControlPanel)</div>
     </div>
-}
+</div>

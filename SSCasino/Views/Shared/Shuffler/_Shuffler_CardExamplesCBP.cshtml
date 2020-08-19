@@ -14,8 +14,15 @@
 @Html.DevExpress().CallbackPanel(
     settings =>
     {
-        // Assign general and shared properties
-        DevExpressHelpers.Render_CallbackPanel(settings, "cbp_ShufflerCardExamples", "Home", "ShufflerControlPanel_ChangeCardPack", "", true, true);
+        // General Properties
+        settings.Name = "cbp_ShufflerCardExamples";
+
+        // Server side callbacks
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "ShufflerControlPanel_ChangeCardPack" };
+
+        // Clientside events
+        settings.ClientSideEvents.BeginCallback = "cbp_ShufflerCardExamples_BeginCallback";
+        settings.ClientSideEvents.EndCallback = "cbp_ShufflerCardExamples_EndCallback";
 
         // Content
         settings.SetContent(() =>

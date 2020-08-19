@@ -14,9 +14,10 @@
 // VARIABLES
 //========================================================================================================================
 
-var m_CardAreaWidth = 0;
-var m_CardAreaHeight = 0;
-var m_CardSamplesHeight = 0;
+// Results graph - force autosize
+var m_ResultsGraphWidth = 0;
+var m_ResultsGraphHeight = 0;
+var m_GraphInRefresh = false;
 
 //========================================================================================================================
 // FUNCTIONS
@@ -24,20 +25,15 @@ var m_CardSamplesHeight = 0;
 
 function PageLoadTasks()
 //========================================================================================================================
-// Resize the shuffling results chart when the page is loaded
-//
-// Developer Notes
-//      
+// Perform page load tasks
 //========================================================================================================================
 {
-    // Get the new width of the parent container and refresh the results graph
-    m_CardAreaWidth = document.getElementById('div_CardArea').offsetWidth;
-    m_CardAreaHeight = document.getElementById('div_CardArea').offsetHeight;
-    m_CardSamplesHeight = document.getElementById('div_CardSamples').offsetHeight;
+    // Change the website background to the green circular gradient
+    siteBody = $(document.body);
+    siteBody.addClass("ssc_GreenBodyBackground");
 
-    // Refresh the shuffling results graph
-    m_CallbackAction = ACT_RESIZE_CHART;
-    graph_ShuffleResults.PerformCallback();
+    // Refresh the results graph
+    RefreshResultsGraph(ACT_RESIZE_CHART);
 }
 
 function PageResizeTasks()
@@ -48,16 +44,28 @@ function PageResizeTasks()
 //      
 //========================================================================================================================
 {
-    if (graph_ShuffleResults.InCallback() == false) {
-        // Get the new width of the parent container and refresh the results graph
-        m_CardAreaWidth = document.getElementById('div_CardArea').offsetWidth;
-        m_CardAreaHeight = document.getElementById('div_CardArea').offsetHeight;
-        m_CardSamplesHeight = document.getElementById('div_CardSamples').offsetHeight;
-
-        // Refresh the shuffling results graph
-        m_CallbackAction = ACT_RESIZE_CHART;
-        graph_ShuffleResults.PerformCallback();
+    // Refresh the results graph
+    if (m_GraphInRefresh == false) {
+        RefreshResultsGraph(ACT_RESIZE_CHART);
     }
+}
+
+function RefreshResultsGraph(action)
+//========================================================================================================================
+// Resize the shuffling results chart when the browser window resizes
+//
+// Paraneters
+//      action: Action to be performed
+//========================================================================================================================
+{
+    // Get the new width of the parent container and refresh the results graph
+    m_ResultsGraphWidth = document.getElementById('div_RandomnessContainer').offsetWidth;
+    m_ResultsGraphHeight = document.getElementById('div_ResultsGraph').offsetHeight;
+
+    // Refresh the shuffling results graph
+    m_GraphInRefresh = true;
+    m_CallbackAction = action;
+    graph_ShuffleResults.PerformCallback();
 }
 
 function cbp_RandomnessCardDisplay_BeginCallback(sender, eventArgs)
@@ -85,11 +93,14 @@ function cbp_RandomnessCardDisplay_EndCallback(sender, eventArgs)
 //      eventArgs: Data associated with the event
 //========================================================================================================================
 {
-    // If the current action is change sample size or reset, the results graph needs to be updated aslo
-    if ((m_CallbackAction == 'act_ChangeSampleSize') || (m_CallbackAction == 'act_Reset'))
-        graph_ShuffleResults.PerformCallback();
-    else
+    // If the sample size changed, refresh the results graph
+    if ((m_CallbackAction == ACT_CHANGE_SAMPLE_SIZE) || (m_CallbackAction == ACT_SHUFFLE)) {
+        RefreshResultsGraph(m_CallbackAction);
+    }
+    else {
+        // Clear the callback action
         m_CallbackAction = ""
+    }
 }
 
 function graph_ShuffleResults_BeginCallback(sender, eventArgs)
@@ -103,9 +114,8 @@ function graph_ShuffleResults_BeginCallback(sender, eventArgs)
 {
     // Set the custom event arguments
     eventArgs.customArgs[ARG_ACTION] = m_CallbackAction;
-    eventArgs.customArgs[ARG_CARD_AREA_WIDTH] = m_CardAreaWidth;
-    eventArgs.customArgs[ARG_CARD_AREA_HEIGHT] = m_CardAreaHeight;
-    eventArgs.customArgs[ARG_CARD_SAMPLES_HEIGHT] = m_CardSamplesHeight;
+    eventArgs.customArgs[ARG_RESULTS_GRAPH_WIDTH] = m_ResultsGraphWidth;
+    eventArgs.customArgs[ARG_RESULTS_GRAPH_HEIGHT] = m_ResultsGraphHeight;
 }
 
 function graph_ShuffleResults_EndCallback(sender, eventArgs)
@@ -117,6 +127,8 @@ function graph_ShuffleResults_EndCallback(sender, eventArgs)
 //      eventArgs: Data associated with the event
 //========================================================================================================================
 {
+    m_GraphInRefresh = false;
+
     // Clear the event argument variables
     m_CallbackAction = "";
 }

@@ -1,0 +1,19 @@
+﻿@{
+    //========================================================================================================================
+    // WEBSITE: Poker Playground - Experimental virtual poker
+    //
+    // _Randomness_Container.cshtml
+    //      Renders the card display and results graph areas on the randomness comparison page.
+    //========================================================================================================================
+}
+
+@using SSCasino.Models;
+@model Randomness
+
+<!-- Sample cardes area -->
+@Html.Partial("_Randomness_DisplayCBP", Model)
+
+<!-- Shuffle results graph -->
+<div class="ssc_Randomness_ShuffleTitle ssc_Randomness_ResultsTitle">Shuffling Results: @Model.ShuffleResultsData.TotalShuffles Shuffles</div>
+<div id="div_ResultsGraph" class="ssc_Randomness_ShuffleResultsGrid">@Html.Partial("_Randomness_ResultsGraph", Model.ShuffleResultsData)</div>
+

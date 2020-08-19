@@ -65,9 +65,7 @@
 
 <body onload="PageLoad()" onunload="PageUnload()" onresize="PageResize()">
     @Html.Partial("_SiteHeader", new SiteHeader())
-    <div class="ssc_SiteBody">
-        @RenderBody()
-    </div>
+    @RenderBody()
     @Html.Partial("_SiteFooter", new SiteFooter())
 </body>
 </html>

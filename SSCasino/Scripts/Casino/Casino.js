@@ -17,9 +17,9 @@
 // Callback actions
 var ACT_SHUFFLE = "act_Shuffle";
 var ACT_CHANGE_CARD_PACK = "act_ChangeCardPack";
-var ACT_RESET = "act_Reset";
 var ACT_CHANGE_SAMPLE_SIZE = "act_ChangeSampleSize";
 var ACT_RESIZE_CHART = "act_ResizeChart";
+var ACT_RESET = "act_Reset";
 
 // Callback Arguments
 var ARG_ACTION = "arg_Action";
@@ -28,9 +28,8 @@ var ARG_SHUFFLE_MODE = "arg_ShuffleMode";
 var ARG_SHUFFLE_TYPE = "arg_ShuffleType";
 var ARG_SHUFFLE_COUNT = "arg_ShuffleCount";
 var ARG_SAMPLE_SIZE = "arg_SampleSize";
-var ARG_CARD_AREA_WIDTH = "arg_CardAreaWidth";
-var ARG_CARD_AREA_HEIGHT = "arg_CardAreaHeight";
-var ARG_CARD_SAMPLES_HEIGHT = "arg_CardSamplesHeight";
+var ARG_RESULTS_GRAPH_WIDTH = "arg_ResultsGraphWidth";
+var ARG_RESULTS_GRAPH_HEIGHT = "arg_ResultsGraphHeight";
 var ARG_SESSION_KEY = "arg_SessionKey";
 var ARG_SEARCH_PHRASE = "arg_SearchPhrase";
 var ARG_VIDEO_URL = "arg_VideoURL";

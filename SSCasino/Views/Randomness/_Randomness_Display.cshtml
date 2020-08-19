@@ -10,22 +10,20 @@
 @using SSCasino.Models;
 @model Randomness
 
-@{
-    // Card display areas
-    <div id="div_CardSamples" class="ssc_CardSamples">
-        <div class="ssc_CardSamplesLeft">
-            <div class="ssc_ShuffleTitle">Fisher-Yates Shuffling Algorithm</div>
-            @Html.Partial("_Randomness_CardSamples", Model.ShuffledPackageFisher.CardPack.CardDeck)
-        </div>
-        <div class="ssc_CardSamplesRight">
-            <div class="ssc_ShuffleTitle">Naive Shuffling Algorithm</div>
-            @Html.Partial("_Randomness_CardSamples", Model.ShuffledPackageNaive.CardPack.CardDeck)
+<div class="ssc_Randomness_SampleCardsContainer">
+    <!-- Fisher-Yates shuffle samppe cards-->
+    <div class="ssc_Randomness_SampleCardsArea">
+        <div class="ssc_Randomness_ShuffleTitle">Fisher-Yates Shuffling Algorithm</div>
+        <div class="ssc_Randomness_SampleCards">
+            <div class="ssc_CardShuffler_CardsAreaRow">@Html.Partial("_Randomness_CardSamples", Model.ShuffledPackageFisher.CardPack.CardDeck)</div>
         </div>
     </div>
 
-    // Shuffle results area
-    <div class="ssc_ShuffleResults">
-        <div class="ssc_ShuffleTitle ssc_ShuffleResultsTitle">Shuffling Results: @Model.ShuffleResultsData.TotalShuffles Shuffles</div>
-        @Html.Partial("_Randomness_ResultsGraph", Model.ShuffleResultsData)
+    <!-- Naive shuffle samppe cards-->
+    <div class="ssc_Randomness_SampleCardsArea">
+        <div class="ssc_Randomness_ShuffleTitle">Naive Shuffling Algorithm</div>
+        <div class="ssc_Randomness_SampleCards">
+            <div class="ssc_CardShuffler_CardsAreaRow">@Html.Partial("_Randomness_CardSamples", Model.ShuffledPackageNaive.CardPack.CardDeck)</div>
+        </div>
     </div>
-}
+</div>

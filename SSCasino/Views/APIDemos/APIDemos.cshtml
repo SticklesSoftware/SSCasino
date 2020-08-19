@@ -12,20 +12,24 @@
 
 @section PageIncludes {
     <script src="@Url.Content("~/Scripts/Casino/APIDemos.js")" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Styles/APIDemos.css")" />
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Styles/ThumbnailsScrollbar.css")" />
 }
 
+<!-- API Demos page -->
+<div class="ssc_APIDemos_Page">
+    <!-- Information and technology panel-->
+    @Html.Partial("_InfoPanel", Model.InformationPanel)
 
-@{
-    // Info and technology panel
-    @Html.Partial("_InfoPanel", Model.InformationPanel);
-
-    <div class="ssc_APIDemos">
-        @Html.Partial("_APIDemos_YouTubeMenu", Model.YouTubeAPI)
-
-        <div class="ssc_APIDemos_Page">
-            <div class="ssc_APIDemos_PageLeft">@Html.Partial("_APIDemos_ThumbnailsCBP", Model.YouTubeAPI)</div>
-            <div class="ssc_APIDemos_PageRight">@Html.Partial("_APIDemos_VideoPlayerCBP", Model.YouTubeAPI)</div>
-        </div>
+    <!-- Video menu -->
+    <div class="ssc_APIDemos_VideoMenu">
+        <div class="ssc_APIDemos_VideoMenuTitle">@Model.YouTubeAPI.YouTubeMenuTitle</div>
+        <div class="ssc_APIDemos_VideoMenuCategories">@Html.Partial("_APIDemos_YouTubeMenu", Model.YouTubeAPI)</div>
     </div>
-}
+
+    <!-- Video display -->
+    <div class="ssc_APIDemos_VideoDisplay">
+        <div class="ssc_APIDemos_VideoDisplayLeft">@Html.Partial("_APIDemos_ThumbnailsCBP", Model.YouTubeAPI)</div>
+        <div class="ssc_APIDemos_VideoDisplayRight">@Html.Partial("_APIDemos_VideoPlayerCBP", Model.YouTubeAPI)</div>
+    </div>
+</div>

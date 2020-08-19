@@ -3,7 +3,7 @@
     // WEBSITE: Poker Playground - Experimental virtual poker
     //
     // Home.cshtml
-    //      Renders the home page of the casino.
+    //      Renders large poker chip image links (plates) for different areas of the site.
     //========================================================================================================================
 }
 
@@ -12,39 +12,41 @@
 
 @section PageIncludes {
     <script src="@Url.Content("~/Scripts/Casino/Home.js")" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Styles/Home.css")" />
 }
 
-@{
-    // About this site popup
-    @Html.Partial("_Home_SitePopup", Model);
+<!-- About this site popup -->
+@Html.Partial("_Home_SitePopup", Model)
 
-    // Info and technology panel
-    @Html.Partial("_InfoPanel", Model.SitePanel);
+<!-- Home page container -->
+<div class="ssc_HomePage">
+    <!-- Information and technology panel-->
+    @Html.Partial("_InfoPanel", Model.SitePanel)
 
-    // Home page plates
+    <!---Home page areas (plates) -->
     <div class="ssc_HomeContainer">
-        <div id="div_ColLeft" class="ssc_HomeColumn">
-            <div class="ssc_HomeColumn">
-                <div class="ssc_HomeTitle">Randomness</div>
-                <div><a href="@Url.Action("Randomness", "Home")"><img class="ssc_ResponsiveImage ssc_AreaLink" src="@Url.Content("~/Content/Images/Home/RandomnessPlate.png")" alt="Randomness Plate" /></a></div>
+        <div class="ssc_HomeColumn">
+            <div class="ssc_HomeArea">
+                <a href="@Url.Action("Randomness", "Home")"><img class="ssc_HomeArea_Link ssc_ResponsiveImage" src="@Url.Content("~/Content/Images/Home/RandomnessPlate.png")" alt="Randomness Plate" /></a>
+                <div class="ssc_HomeArea_Title">Randomness</div>
             </div>
-            <div class="ssc_HomeColumn">
-                <div class="ssc_HomeTitle">Shuffle</div>
-                <a href="@Url.Action("CardShuffler", "Home")"><img class="ssc_ResponsiveImage ssc_AreaLink" src="@Url.Content("~/Content/Images/Home/ShufflePlate.png")" alt="Shuffle Plate" /></a>
+            <div class="ssc_HomeArea">
+                <a href="@Url.Action("CardShuffler", "Home")"><img class="ssc_ResponsiveImage ssc_HomeArea_Link ssc_HomeArea_Pad" src="@Url.Content("~/Content/Images/Home/ShufflePlate.png")" alt="Shuffle Plate" /></a>
+                <div class="ssc_HomeArea_Title">Shuffle</div>
             </div>
         </div>
-        <div id="div_ColCenter" class="ssc_HomeColumn">
+        <div class="ssc_HomeColumn">
             <img class="ssc_ResponsiveImage" src="@Url.Content("~/Content/Images/Home/PokerPlayground.png")" alt="Poker Playground" />
         </div>
-        <div id="div_ColRight" class="ssc_HomeColumn">
-            <div class="ssc_HomeColumn">
-                <div class="ssc_HomeTitle">Cloud APIs</div>
-                <a href="@Url.Action("APIDemos", "Home")"><img class="ssc_ResponsiveImage ssc_AreaLink" src="@Url.Content("~/Content/Images/Home/APIsPlate.png")" alt="Google Plate" /></a>
+        <div class="ssc_HomeColumn">
+            <div class="ssc_HomeArea">
+                <a href="@Url.Action("APIDemos", "Home")"><img class="ssc_ResponsiveImage ssc_HomeArea_Link" src="@Url.Content("~/Content/Images/Home/APIsPlate.png")" alt="Google Plate" /></a>
+                <div class="ssc_HomeArea_Title">Cloud APIs</div>
             </div>
-            <div class="ssc_HomeColumn">
-                <div class="ssc_HomeTitle">Poker</div>
-                <a href="@Url.Action("PokerRoom", "Home")"><img class="ssc_ResponsiveImage ssc_AreaLink" src="@Url.Content("~/Content/Images/Home/PokerPlate.png")" alt="Poker Plate" /></a>
+            <div class="ssc_HomeArea">
+                <a href="@Url.Action("PokerRoom", "Home")"><img class="ssc_ResponsiveImage ssc_HomeArea_Link ssc_HomeArea_Pad" src="@Url.Content("~/Content/Images/Home/PokerPlate.png")" alt="Poker Plate" /></a>
+                <div class="ssc_HomeArea_Title">Poker</div>
             </div>
         </div>
     </div>
-}
+</div>

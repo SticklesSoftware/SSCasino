@@ -1,0 +1,64 @@
+﻿/*
+//========================================================================================================================
+// WEBSITE: Poker Playground - Experimental virtual poker
+//
+// Home.css
+//      Styles specific to the home page
+//========================================================================================================================
+*/
+
+.ssc_HomePage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.ssc_HomeContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ssc_HomeColumn {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.ssc_HomeArea {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ssc_HomeArea_Pad {
+    padding-top: 4vh;
+}
+
+.ssc_HomeArea_Title {
+    font-size: calc(6pt + 3vh);
+    color: #aa964d;
+}
+
+.ssc_HomeArea_Link {
+    filter: opacity(25%);
+}
+
+.ssc_HomeArea_Link:hover {
+    animation: SSC_Brighten .5s steps(10, end);
+    filter: opacity(100%);
+}
+
+@keyframes SSC_Brighten {
+    0% {
+        filter: opacity(25%);
+    }
+
+    100% {
+        filter: opacity(100%);
+    }
+}

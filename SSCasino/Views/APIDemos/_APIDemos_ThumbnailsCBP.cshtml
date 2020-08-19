@@ -14,8 +14,15 @@
 @Html.DevExpress().CallbackPanel(
     settings =>
     {
-        // Assign general and shared properties
-        DevExpressHelpers.Render_CallbackPanel(settings, "cbp_Thumbnails", "Home", "APIDemos_RefreshThumbnails", "", true, true);
+        // General Settings
+        settings.Name = "cbp_Thumbnails";
+
+        // Server side callbacks
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "APIDemos_RefreshThumbnails" };
+
+        // Client side events
+        settings.ClientSideEvents.BeginCallback = "cbp_Thumbnails_BeginCallback";
+        settings.ClientSideEvents.EndCallback = "cbp_Thumbnails_EndCallback";
 
         // Content
         settings.SetContent(() =>

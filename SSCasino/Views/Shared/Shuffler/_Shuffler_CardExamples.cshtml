@@ -11,13 +11,9 @@
 @using SSCasino.Models;
 @model CardPack
 
-@{
-    // Eexample card font and back images
-    <div class="ssc_PanelCardExamplesArea">
-        <div class="ssc_PanelCardExample"><img class="ssc_ResponsiveImage ssc_PlayingCard" src="@Url.Content(Model.CardFrontImage)" /></div>
-        <div class="ssc_PanelCardExample"><img class="ssc_ResponsiveImage ssc_PlayingCard" src="@Url.Content(Model.CardBackImage)" /></div>
-    </div>
+<!-- Sample cards-->
+<img class="ssc_ShufflerCP_SampleCard ssc_ResponsiveImage" src="@Url.Content(Model.CardFrontImage)" />
+<img class="ssc_ShufflerCP_SampleCard ssc_ResponsiveImage" src="@Url.Content(Model.CardBackImage)" />
 
-    // Hidden Fields
-    @Html.Hidden("hdnCardPackId", Model.CardPackId);
-}
+<!-- Hidden fields -->
+@Html.Hidden("hdnCardPackId", Model.CardPackId)

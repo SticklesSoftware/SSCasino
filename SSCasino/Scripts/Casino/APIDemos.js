@@ -36,6 +36,12 @@ function PageLoadTasks()
 //      
 //========================================================================================================================
 {
+    // Change the website background to the green circular gradient
+    siteBody = $(document.body);
+    siteBody.removeClass("ssc_DefaultBodyBackground");
+    siteBody.addClass("ssc_RedBodyBackground");
+
+    // Highligh the active thumbnail row
     m_ActiveThumbnaiRow = $("#hdn_SelectedVideoResultNo").val();
     var thumbnailRows = document.getElementsByName("div_ThumbnailRow");
     thumbnailRows.item(m_ActiveThumbnaiRow - 1).classList.add("ssc_APIDemos_ThumbnailRowSelected");

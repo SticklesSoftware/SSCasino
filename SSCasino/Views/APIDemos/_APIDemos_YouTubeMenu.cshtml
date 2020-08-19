@@ -10,17 +10,17 @@
 @using SSCasino.Models;
 @model YouTubeAPI
 
-@{
-    <div class="ssc_APIDemos_PageHeader">
+<div class="ssc_APIDemos_CategoryTitle">@Model.YouTubeCategoryTitle</div>
+<div class="ssc_APIDemos_CategoryContainer">
+    @foreach (YouTubeCategory category in Model.YouTubeMenu)
+    {
+        <div class="ssc_APIDemos_CategoryItem" onclick='YouTube_MenuClick("@category.SessionKey", "@category.SearchPhrase", "@category.Caption");'>@category.Caption</div>
+    }
+</div>
+
+
+    @*<div class="ssc_APIDemos_PageHeader">
         <div class="ssc_APIDemos_PageHeaderLeft ssc_APIDemos_VideoMenuTitle">@Model.YouTubeMenuTitle</div>
         <div class="ssc_APIDemos_PageHeaderRight">
-            <div class="ssc_APIDemos_CategoriesContainer">
-                <div class="ssc_APIDemos_CategoryTitle">@Model.YouTubeCategoryTitle</div>
-                @foreach (YouTubeCategory category in Model.YouTubeMenu)
-                {
-                    <div class="ssc_APIDemos_CategoryItem" onclick='YouTube_MenuClick("@category.SessionKey", "@category.SearchPhrase", "@category.Caption");'>@category.Caption</div>
-                }
-            </div>
         </div>
-    </div>
-}
+    </div>*@

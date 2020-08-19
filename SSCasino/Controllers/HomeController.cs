@@ -29,9 +29,9 @@ namespace SSCasino.Controllers
         // Callback Actions
         private const string ACT_SHUFFLE = "act_Shuffle";
         private const string ACT_CHANGE_CARD_PACK = "act_ChangeCardPack";
-        private const string ACT_RESET = "act_Reset";
         private const string ACT_CHANGE_SAMPLE_SIZE = "act_ChangeSampleSize";
         private const string ACT_RESIZE_CHART = "act_ResizeChart";
+        private const string ACT_RESET = "act_Reset";
 
         // Callback Arguments
         private const string ARG_ACTION = "arg_Action";
@@ -40,9 +40,8 @@ namespace SSCasino.Controllers
         private const string ARG_SHUFFLE_TYPE = "arg_ShuffleType";
         private const string ARG_SHUFFLE_COUNT = "arg_ShuffleCount";
         private const string ARG_SAMPLE_SIZE = "arg_SampleSize";
-        private const string ARG_CARD_AREA_WIDTH = "arg_CardAreaWidth";
-        private const string ARG_CARD_AREA_HEIGHT = "arg_CardAreaHeight";
-        private const string ARG_CARD_SAMPLES_HEIGHT = "arg_CardSamplesHeight";
+        private const string ARG_RESULTS_GRAPH_WIDTH = "arg_ResultsGraphWidth";
+        private const string ARG_RESULTS_GRAPH_HEIGHT = "arg_ResultsGraphHeight";
         private const string ARG_SESSION_KEY = "arg_SessionKey";
         private const string ARG_SEARCH_PHRASE = "arg_SearchPhrase";
         private const string ARG_VIDEO_URL = "arg_VideoURL";
@@ -186,11 +185,6 @@ namespace SSCasino.Controllers
                         cardPack = shuffledPackage.CardPack;
                         break;
 
-                    case ACT_RESET:
-                        // Get the default card pack
-                        cardPack = CreateCardPackModel(dbCasino);
-                        break;
-
                     case ACT_CHANGE_CARD_PACK:
                         // Retrieve an unshuffled pack of cards
                         cardPack = CreateCardPackModel(dbCasino, cardPackId);
@@ -328,14 +322,9 @@ namespace SSCasino.Controllers
                         model.ShuffledPackageNaive.CardPack = CreateCardPackModel(dbCasino, cardPackId, (SiteHelpers.SampleSizes)sampleSize);
                         break;
 
-                    case ACT_RESET:
-                        // Get default data for the page
-                        ResetRandomnessPaage(dbCasino, model);
-                        break;
-
                     default:
                         // Get default data for the page
-                        ResetRandomnessPaage(dbCasino, model);
+                        ResetRandomnessPage(dbCasino, model);
                         break;
                 }
 
@@ -386,25 +375,23 @@ namespace SSCasino.Controllers
                 {
                     case ACT_RESIZE_CHART:
                         // Get the resize width and height
-                        int cardAreaWidth = !string.IsNullOrEmpty(Request.Params[ARG_CARD_AREA_WIDTH]) ? int.Parse(Request.Params[ARG_CARD_AREA_WIDTH]) : 0;
-                        int cardAreaHeight = !string.IsNullOrEmpty(Request.Params[ARG_CARD_AREA_HEIGHT]) ? int.Parse(Request.Params[ARG_CARD_AREA_HEIGHT]) : 0;
-                        int cardSamplesHeight = !string.IsNullOrEmpty(Request.Params[ARG_CARD_SAMPLES_HEIGHT]) ? int.Parse(Request.Params[ARG_CARD_SAMPLES_HEIGHT]) : 0;
+                        int resultsGridWidth = !string.IsNullOrEmpty(Request.Params[ARG_RESULTS_GRAPH_WIDTH]) ? int.Parse(Request.Params[ARG_RESULTS_GRAPH_WIDTH]) : 0;
+                        int resultsGridHeight = !string.IsNullOrEmpty(Request.Params[ARG_RESULTS_GRAPH_HEIGHT]) ? int.Parse(Request.Params[ARG_RESULTS_GRAPH_HEIGHT]) : 0;
 
                         // Calculate the new width and height of the shuffling results graph
                         // Store these values in the sesssion object for use on refeshes
-                        model.ResizeWidth = ((cardAreaWidth == 0) ? model.DeafultWidth : cardAreaWidth);
-                        model.ResizeHeight = ((cardAreaHeight == 0) ? model.DefaultHeight : ((cardAreaHeight - cardSamplesHeight) - 30));
+                        model.ResizeWidth = ((resultsGridWidth == 0) ? model.DeafultWidth : resultsGridWidth);
+                        model.ResizeHeight = ((resultsGridHeight == 0) ? model.DefaultHeight : resultsGridHeight);
                         Session[SiteHelpers.ResultsGraphWidth] = model.ResizeWidth;
                         Session[SiteHelpers.ResultsGraphHeight] = model.ResizeHeight;
                         break;
 
                     case ACT_CHANGE_SAMPLE_SIZE:
-                    case ACT_RESET:
                         // Reset the shuffing results
                         SiteHelpers.ClearCombinedShuffleResults();
                         break;
 
-                    default:
+                    case ACT_RESET:
                         // Reset the shuffing results
                         SiteHelpers.ClearCombinedShuffleResults();
                         break;
@@ -422,7 +409,7 @@ namespace SSCasino.Controllers
             return PartialView("_Randomness_ResultsGraph", model);
         }
 
-        private void ResetRandomnessPaage(SSCasino_DBContext dbCasino, Randomness model)
+        private void ResetRandomnessPage(SSCasino_DBContext dbCasino, Randomness model)
         //================================================================================================================
         // Reset the data for the randomness page
         //

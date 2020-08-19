@@ -268,6 +268,7 @@
     <Content Include="Content\Images\SiteHeader\HomeLink.png" />
     <Content Include="Content\Images\SiteHeader\JokerLink.png" />
     <Content Include="Content\Images\SiteHeader\MiniMenu.png" />
+    <Content Include="Content\Styles\APIDemos.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-grid.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-grid.min.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-reboot.css" />
@@ -383,10 +384,6 @@
     <Content Include="Content\Images\CardDecks\LargeTwoColor\LargeTwoColor_QH.png" />
     <Content Include="Content\Images\CardDecks\LargeTwoColor\LargeTwoColor_QS.png" />
     <Content Include="Content\Images\FavIcon.png" />
-    <Content Include="Content\Images\Shared\ResetButtonDown.png" />
-    <Content Include="Content\Images\Shared\ResetButtonUp.png" />
-    <Content Include="Content\Images\Shared\ShuffleButtonDown.png" />
-    <Content Include="Content\Images\Shared\ShuffleButtonUp.png" />
     <Content Include="Content\Images\SiteHeader\PokerLink.png" />
     <Content Include="Content\Images\SiteHeader\ShuffleLink.png" />
     <Content Include="Content\Images\SiteHeader\SpadeLogo.png" />
@@ -394,6 +391,8 @@
     <Content Include="Content\Styles\Bootstrap\jquery-ui.css" />
     <Content Include="Content\Styles\Bootstrap\jquery-ui.min.css" />
     <Content Include="Content\Styles\Casino.css" />
+    <Content Include="Content\Styles\Home.css" />
+    <Content Include="Content\Styles\CardShufflers.css" />
     <Content Include="Content\Styles\ThumbnailsScrollbar.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ace.js" />
@@ -593,6 +592,7 @@
     <Content Include="Views\Shared\MiniMenu\_MiniMenu_Popup.cshtml" />
     <Content Include="Views\Shared\MiniMenu\_MiniMenu_Items.cshtml" />
     <Content Include="Views\PokerRoom\_PokerRoom_PlayerPanel.cshtml" />
+    <Content Include="Views\Randomness\_Randomness_Container.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

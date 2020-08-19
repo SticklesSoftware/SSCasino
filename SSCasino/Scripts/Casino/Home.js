@@ -22,10 +22,13 @@ function PageLoadTasks()
 //      The popup is shown only the first time the user visits the site
 //========================================================================================================================
 {
-    // Get the site popup shown cookie
-    var sitePopupShown = document.cookie;
+    // Change the website background to the gold circular gradient
+    siteBody = $(document.body);
+    siteBody.addClass("ssc_DefaultBodyBackground");
 
+    // Get the site popup shown cookie
     // If the cookie does not exists, show the popup and create the cookie
+    var sitePopupShown = document.cookie;
     if (sitePopupShown == "") {
         document.cookie = "SitePopupShown=1;";
         $('#div_SitePopup').fadeIn();

@@ -13,15 +13,19 @@
 @Html.DevExpress().Chart(settings =>
 {
     settings.Name = "graph_ShuffleResults";
-    settings.Width = Unit.Pixel(Model.ResizeWidth - 40);
-    settings.Height = Unit.Pixel(Model.ResizeHeight - 40);
+    settings.Width = Unit.Pixel(Model.ResizeWidth - 60);
+    settings.Height = Unit.Pixel(Model.ResizeHeight);
+    settings.ControlStyle.CssClass = "ssc_Randomness_ShuffleResultsGrid";
     settings.PaletteName = "Office 2013";
-    settings.RenderFormat = DevExpress.XtraCharts.Web.RenderFormat.Svg;
+    settings.RenderFormat = DevExpress.XtraCharts.Web.RenderFormat.Png;
+    settings.ControlStyle.HorizontalAlign = HorizontalAlign.Center;
 
     settings.BorderOptions.Visibility = DefaultBoolean.True;
     settings.BorderOptions.Thickness = 4;
     settings.CrosshairEnabled = DefaultBoolean.True;
     settings.SaveStateOnCallbacks = false;
+
+    // Server side callbacks
     settings.CallbackRouteValues = new { controller = "Home", action = "Randomness_RefreshResultsGraph" };
 
     // Client side events
