@@ -151,52 +151,64 @@ body {
 .ssc_SitePopup {
     display: none;
     width: 60vw;
+    min-height: 20vh;
+    overflow-y: auto;
     position: absolute;
-    top: calc(10vh + 120px);
+    top: 20vh;
     left: calc((100vw - 60vw) / 2);
     z-index: 800;
-    margin: 20px auto;
-    padding: 20px 30px;
+    padding: 2vh 1.5vw;
     background-color: #333333;
     border: 2px solid #aa964d;
-    border-radius: 16px;
-    box-shadow: 8px 16px 30px -8px #1a1a1a;
+    border-radius: 2vw;
+    box-shadow: 1vw 1.5vh 3vw -1vh #1a1a1a;
+}
+
+.ssc_SitePopup_Container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.ssc_SitePopup_Header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .ssc_SitePopup_Logo {
-    float: left;
-    width: 64px;
-    margin-right: 20px;
+    margin-right: 1vw;
 }
 
 .ssc_SitePopup_Title {
-    float: left;
-    line-height: 64px;
     color: #aa964d;
-    font-size: 19pt
+    font-size: calc(10pt + 2vh);
 }
 
 .ssc_SitePopup_Body {
-    margin-left: 84px;
+    margin-top: 2.5vh;
     color: #e5e5e5;
     line-height: 125%;
-    font-size: 15pt;
+    font-size: calc(6pt + 1.5vh);
 }
 
 .ssc_SitePopup_TechHeader {
-    margin-top: 32px;
-    margin-bottom: 16px;
+    margin-top: 3vh;
+    margin-bottom: 1.5vh;
     color: #aa964d;
-    font-size: 16pt;
+    font-size: calc(6pt + 1.5vh);
+    text-decoration: underline;
 }
 
 .ssc_SitePopup_TechLineHeader, .ssc_SitePopup_TechLineBody {
-    padding-bottom: 12px;
-    font-size: 14pt;
+    font-size: calc(8pt + 1.5vh);
 }
 
 .ssc_SitePopup_TechLineHeader {
-    margin-left: 84px;
+    padding-right: .5vw;
     color: #e5e5e5;
 }
 
@@ -204,17 +216,31 @@ body {
     color: #2f9bb8;
 }
 
-.ssc_CloseButton {
-    width: 140px;
-    height: 39px;
-    margin: 30px auto 0px auto;
-    background-image: url("/Content/Images/Home/CloseButtonUp.png");
-    background-position: center;
-    background-repeat: no-repeat;
+.ssc_SitePopup_CloseButton {
+    align-self: center;
+    margin-top: 2vh;
+    padding: .5vh 2vw;
+    background-color: #aa964d;
+    border: 1px solid #000000;
+    border-radius: .5vw;
+    box-shadow: .25vw .5vh .5vw #1a1a1a;
+    font-family: "Footlight MT";
+    font-size: calc(6pt + 2vh);
+    color: #000000;
+    text-align: center;
+    cursor: pointer;
 }
 
-.ssc_CloseButton:active {
-    background-image: url("/Content/Images/Home/CloseButtonDown.png");
+.ssc_SitePopup_CloseButton:hover {
+    color: #00ffff;
+}
+
+.ssc_SitePopup_CloseButton:active {
+    position: relative;
+    top: -1px;
+    left: -1px;
+    box-shadow: 0vw 0vh 0vw #000000;
+    background-color: #614c00;
 }
 
 

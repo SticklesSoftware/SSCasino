@@ -10,8 +10,33 @@
 @using SSCasino.Models;
 @model PokerPlayground
 
+<div id="div_SitePopup" class="ssc_SitePopup">
+    <div class="ssc_SitePopup_Container">
+        <div class="ssc_SitePopup_Header">
+            <div class="ssc_SitePopup_Logo"><img class="ssc_ResponsiveImage" alt="Site Logo" src="@Url.Content("~/Content/Images/Home/SpadeLogoSmall.png")" /></div>
+            <div class="ssc_SitePopup_Title">@Model.SitePanel.PanelEntries.ElementAt(0).EntryTitle</div>
+        </div>
+        <div class="ssc_SitePopup_Body">@Model.SitePanel.PanelEntries.ElementAt(0).EntryLines.ElementAt(0).EntryLineHeader</div>
+        <div class="ssc_SitePopup_TechHeader">@Model.SitePanel.PanelEntries.ElementAt(1).EntryTitle</div>
+        <div class="ssc_Table">
+            <div class="ssc_TableBody">
+                @foreach (InfoPanelEntryLine entryLine in Model.SitePanel.PanelEntries.ElementAt(1).EntryLines)
+                {
+                    <div class="ssc_TableRow">
+                        <div class="ssc_TableCell ssc_InfoPanelEntryLineHeader">@entryLine.EntryLineHeader</div>
+                        <div class="ssc_TableCell ssc_InfoPanelEntryLineBody">@Html.Raw(entryLine.EntryLineBody)</div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div id="cmd_PopupCloseButton" class="ssc_SitePopup_CloseButton" onclick="cmd_PopupCloseButton_OnClick();">Close</div>
+    </div>
+</div>
+
+
+
 @{
-    <div id="div_SitePopup" class="ssc_SitePopup">
+    @*<div id="div_SitePopup" class="ssc_SitePopup">
         <div class="ssc_FloatParent">
             <div class="ssc_SitePopup_Logo"><img class="ssc_ResponsiveImage" alt="Site Logo" src="@Url.Content("~/Content/Images/Home/SpadeLogoSmall.png")" /></div>
             <div class="ssc_SitePopup_Title">@Model.SitePanel.PanelEntries.ElementAt(0).EntryTitle</div>
@@ -32,5 +57,5 @@
         </div>
 
         <div id="cmd_PopupCloseButton" class="ssc_CloseButton" onclick="cmd_PopupCloseButton_OnClick();"></div>
-    </div>
+    </div>*@
 }
